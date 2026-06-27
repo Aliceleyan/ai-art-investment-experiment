@@ -10,8 +10,8 @@ This folder contains a working browser-based experiment for the study:
 - 2 x 2 mixed experimental design
 - Four fictional artwork investment scenarios
 - Two interface conditions:
-  - Unfiltered Information Interface
-  - AI Knowledge Filtering Interface, which includes the same original artwork information plus an AI-filtered knowledge report
+  - Unfiltered Information Interface, presented as one continuous dossier paragraph
+  - AI Knowledge Filtering Interface, which includes the same original artwork information plus a visual AI-filtered knowledge report
 - Bilingual English/Chinese participant-facing questions
 - Counterbalanced artwork-interface pairing
 - Randomised task order
@@ -32,27 +32,46 @@ This folder contains a working browser-based experiment for the study:
 - Final reflection questions
 - Option-based knowledge-type questions with examples and prompts
 - CSV and JSON data export
+- Local SQLite database collection through `server.py`
 
 ## How To Run
 
-Open `index.html` in a browser, or run a local server from this folder:
+For real data collection on your own computer, run the database server from this folder:
 
 ```bash
-python3 -m http.server 8080
+python3 server.py
 ```
 
 Then open:
 
 ```text
-http://localhost:8080
+http://127.0.0.1:8081
+```
+
+When participants finish, their responses are saved into:
+
+```text
+experiment-data/responses.sqlite3
+```
+
+You can download all artwork-task-level responses as CSV from:
+
+```text
+http://127.0.0.1:8081/api/export.csv
+```
+
+You can inspect all raw JSON records from:
+
+```text
+http://127.0.0.1:8081/api/responses
 ```
 
 ## Important Research Note
 
-This is a front-end prototype. It saves data in the participant's browser and
-allows CSV/JSON export at the end. For formal online data collection, connect it
-to a backend database, Qualtrics, Google Sheets, or a secure research data
-collection endpoint.
+If you open `index.html` directly with `file://`, the experiment still works,
+but it cannot write to the shared SQLite database. In that mode, data is saved in
+the participant's browser and can be downloaded at the end. For shared data
+collection, use `python3 server.py`.
 
 ## Recommended Pilot Checks
 

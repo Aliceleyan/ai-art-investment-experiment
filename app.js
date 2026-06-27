@@ -291,6 +291,15 @@ const priorityLabels = {
   low: "Lower priority / 较低优先级"
 };
 
+const moduleVisuals = {
+  "Market knowledge": { code: "MK", color: "blue" },
+  "Artist reputation knowledge": { code: "AR", color: "green" },
+  "Object-specific knowledge": { code: "OS", color: "gold" },
+  "Risk knowledge": { code: "RK", color: "red" },
+  "Social and expert signal knowledge": { code: "SE", color: "purple" },
+  "Aesthetic and cultural knowledge": { code: "AC", color: "teal" }
+};
+
 const textZh = {
   "Mara Ellison is a London-based emerging painter whose work has appeared in two group exhibitions and one small gallery solo show. Her practice focuses on layered colour fields and coded urban maps.":
     "Mara Ellison 是一位常驻伦敦的新兴画家。她曾参加两次群展和一次小型画廊个展，创作主要围绕层叠色域和编码化城市地图展开。",
@@ -551,20 +560,21 @@ function renderKnowledgeChoices(targetId, name) {
 }
 
 function renderRawDossier(artwork, title = "") {
-  const blocks = Object.entries(artwork.raw)
+  const narrative = Object.entries(artwork.raw)
     .map(([blockTitle, text]) => {
       const meta = rawKnowledgeLabels[blockTitle] || { label: blockTitle, hint: "" };
       return `
-        <article class="info-block">
-          <h4>${meta.label}</h4>
-          ${meta.hint ? `<p class="knowledge-hint">${meta.hint}</p>` : ""}
-          <p>${bilingual(text)}</p>
-        </article>
+        <strong>${meta.label}:</strong> ${bilingual(text)}
       `;
     })
-    .join("");
-  const heading = title ? `<h3 class="section-label">${title}</h3>` : "";
-  return `<div class="raw-dossier">${heading}${blocks}</div>`;
+    .join(" ");
+  const heading = title || "Conventional artwork dossier / 传统艺术品资料";
+  return `
+    <article class="narrative-dossier">
+      <h3>${heading}</h3>
+      <p>${narrative}</p>
+    </article>
+  `;
 }
 
 function renderInterface(task, artwork) {
@@ -575,11 +585,13 @@ function renderInterface(task, artwork) {
   const modules = artwork.ai.modules
     .map(([title, priority, text], index) => {
       const meta = moduleLabels[title] || { label: title, hint: "" };
+      const visual = moduleVisuals[title] || { code: "KF", color: "blue" };
       return `
-      <article class="knowledge-module" data-module="${title}">
+      <article class="knowledge-module visual-card" data-module="${title}">
         <button class="module-button" type="button" data-module-index="${index}">
+          <span class="module-icon ${visual.color}">${visual.code}</span>
           <span class="module-title">${meta.label}</span>
-          <span>${priorityLabels[priority] || priority}</span>
+          <span class="priority-dot ${priority}">${priorityLabels[priority] || priority}</span>
         </button>
         <div class="module-body">
           <p class="knowledge-hint">${meta.hint}</p>
@@ -594,8 +606,12 @@ function renderInterface(task, artwork) {
   return `
     <div class="ai-report">
       <div class="report-lead"><strong>AI-filtered knowledge report / AI 过滤知识报告：</strong> ${bilingual(artwork.ai.lead)}</div>
-      ${modules}
-      <details class="source-dossier" open>
+      <div class="visual-guide">
+        <strong>Visual knowledge map / 可视化知识图：</strong>
+        <span>Click a card to read details. / 点击卡片查看细节。</span>
+      </div>
+      <div class="module-grid">${modules}</div>
+      <details class="source-dossier">
         <summary>Original artwork information / 原始艺术品资料</summary>
         ${renderRawDossier(artwork, "Same underlying information / 相同原始信息")}
       </details>
@@ -702,7 +718,29 @@ function finishStudy() {
   const payload = buildPayload();
   localStorage.setItem(`kf_experiment_${state.participantId}`, JSON.stringify(payload));
   $("#summaryBox").textContent = JSON.stringify(payload, null, 2);
+  saveToDatabase(payload);
   showScreen("complete");
+}
+
+async function saveToDatabase(payload) {
+  const status = $("#databaseStatus");
+  if (status) status.textContent = "Database status / 数据库状态：saving...";
+  try {
+    const response = await fetch("/api/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const result = await response.json();
+    if (status) {
+      status.textContent = `Database status / 数据库状态：saved to local database, record #${result.id}. / 已保存到本地数据库，记录编号 #${result.id}。`;
+    }
+  } catch (error) {
+    if (status) {
+      status.textContent = "Database status / 数据库状态：not connected. Data is still saved in this browser and can be downloaded. / 未连接数据库；数据仍已保存在浏览器中，可下载。";
+    }
+  }
 }
 
 function buildPayload() {
