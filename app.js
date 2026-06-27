@@ -8,6 +8,7 @@ const artworks = [
     size: "90 × 70 cm",
     image: "assets/artwork-01.svg",
     meta: "Mara Ellison, Chromatic Index, 2021, acrylic and pigment on linen, 90 × 70 cm.",
+    metaZh: "Mara Ellison，《Chromatic Index》，2021，布面丙烯与颜料，90 × 70 厘米。",
     raw: {
       "Artist biography":
         "Mara Ellison is a London-based emerging painter whose work has appeared in two group exhibitions and one small gallery solo show. Her practice focuses on layered colour fields and coded urban maps.",
@@ -52,6 +53,7 @@ const artworks = [
     size: "65 × 85 cm",
     image: "assets/artwork-02.svg",
     meta: "Theo Ramirez, Quiet Ledger, 2017, oil, wax and graphite on panel, 65 × 85 cm.",
+    metaZh: "Theo Ramirez，《Quiet Ledger》，2017，板面油彩、蜡与石墨，65 × 85 厘米。",
     raw: {
       "Artist biography":
         "Theo Ramirez is a mid-career artist known for textured panel works exploring memory and industrial labour.",
@@ -96,6 +98,7 @@ const artworks = [
     size: "120 × 95 cm",
     image: "assets/artwork-03.svg",
     meta: "Lina Okafor, Archive of Rain, 2012, mixed media textile and ink, 120 × 95 cm.",
+    metaZh: "Lina Okafor，《Archive of Rain》，2012，混合媒介纺织与墨，120 × 95 厘米。",
     raw: {
       "Artist biography":
         "Lina Okafor is an established artist whose work addresses migration, textile memory and postcolonial archives.",
@@ -140,6 +143,7 @@ const artworks = [
     size: "100 × 100 cm",
     image: "assets/artwork-04.svg",
     meta: "Elias Venn, Signal Bloom, 2024, digital print, resin and aluminium, 100 × 100 cm.",
+    metaZh: "Elias Venn，《Signal Bloom》，2024，数字打印、树脂与铝，100 × 100 厘米。",
     raw: {
       "Artist biography":
         "Elias Venn is a rapidly visible artist associated with post-digital abstraction and platform-based collector communities.",
@@ -287,6 +291,153 @@ const priorityLabels = {
   low: "Lower priority / 较低优先级"
 };
 
+const textZh = {
+  "Mara Ellison is a London-based emerging painter whose work has appeared in two group exhibitions and one small gallery solo show. Her practice focuses on layered colour fields and coded urban maps.":
+    "Mara Ellison 是一位伦敦新兴画家，其作品曾参加两次群展和一次小型画廊个展。她的创作关注层叠色域和编码化城市地图。",
+  "Group exhibitions at Northbank Project Space and Alder Gallery. Solo presentation at Finch Lane Projects in 2023.":
+    "曾在 Northbank Project Space 和 Alder Gallery 参加群展，并于 2023 年在 Finch Lane Projects 举办个人展示。",
+  "Represented by a mid-tier contemporary gallery with growing online collector visibility.":
+    "由一家中等规模当代画廊代理，并在网络藏家群体中获得逐渐上升的可见度。",
+  "Only three public auction records are available. Results range from £14,800 to £22,500, with one lot bought in.":
+    "目前仅有三条公开拍卖记录，成交结果在 14,800 英镑至 22,500 英镑之间，其中一件流拍。",
+  "Recent works of similar scale by the artist have been offered between £18,000 and £24,000 in primary and secondary-market contexts.":
+    "该艺术家近期相似尺寸作品在一级和二级市场中的报价大致为 18,000 英镑至 24,000 英镑。",
+  "Acquired from the artist's gallery by a private collector in 2022. No complex ownership history is reported.":
+    "由私人藏家于 2022 年从艺术家代理画廊购得；目前未显示复杂所有权历史。",
+  "Overall good condition, with minor surface abrasions visible under raking light.":
+    "整体品相良好，但在侧光下可见轻微表面擦痕。",
+  "The artist has received several critic mentions and increased social visibility, but there is limited museum acquisition evidence.":
+    "该艺术家获得若干评论提及并提升了社交可见度，但博物馆收藏证据仍有限。",
+  "Short-term demand has increased, particularly among younger collectors, although sales frequency remains low.":
+    "短期需求有所上升，尤其受到年轻藏家关注，但销售频率仍然较低。",
+  "Potential risks include limited auction history, uncertain resale liquidity and possible short-term attention effects.":
+    "潜在风险包括拍卖历史有限、转售流动性不确定，以及短期关注带来的价格影响。",
+  "This case presents moderate upside signals but limited resale evidence. AI filtering highlights market liquidity and artist reputation as the most decision-relevant areas.":
+    "该案例呈现中等上行信号，但转售证据有限。AI 过滤将市场流动性和艺术家声誉标记为最相关的决策领域。",
+  "Comparable sales suggest a reference range between £18,000 and £24,000. However, sales frequency is low, indicating limited secondary-market liquidity.":
+    "可比销售显示参考区间约为 18,000 英镑至 24,000 英镑。然而销售频率较低，说明二级市场流动性有限。",
+  "The artist has growing gallery visibility and critic attention, but institutional validation remains early-stage.":
+    "该艺术家的画廊可见度和评论关注度正在上升，但机构认可仍处于早期阶段。",
+  "The size and medium are commercially favourable. Minor surface abrasions should be checked before purchase.":
+    "作品尺寸和媒介在商业上较有利，但购买前应进一步检查轻微表面擦痕。",
+  "Key risks are limited auction history, one bought-in lot and possible overvaluation from recent short-term attention.":
+    "主要风险包括拍卖历史有限、一件流拍记录，以及近期短期关注可能造成的高估。",
+  "Gallery representation and critic mentions are positive signals, but independent expert consensus is still limited.":
+    "画廊代理和评论提及是积极信号，但独立专家共识仍然有限。",
+  "The work is stylistically coherent with the artist's mapped colour-field practice, but cultural significance remains interpretive.":
+    "该作品与艺术家的地图化色域实践在风格上保持一致，但其文化意义仍需解释性判断。",
+
+  "Theo Ramirez is a mid-career artist known for textured panel works exploring memory and industrial labour.":
+    "Theo Ramirez 是一位中生代艺术家，以探索记忆和工业劳动主题的肌理板面作品而闻名。",
+  "Five gallery solo exhibitions since 2014 and inclusion in two regional museum group shows.":
+    "自 2014 年以来举办过五次画廊个展，并入选两次地区博物馆群展。",
+  "Stable representation by a respected regional gallery, with periodic participation in international art fairs.":
+    "由一家受尊重的地区画廊稳定代理，并定期参加国际艺术博览会。",
+  "Nine auction records since 2018. Most lots sold within estimate, with a narrow price range from £28,000 to £36,000.":
+    "自 2018 年以来有九条拍卖记录。多数拍品在估价范围内成交，价格区间较窄，为 28,000 英镑至 36,000 英镑。",
+  "Comparable panel works from 2016-2019 have sold between £30,000 and £38,000.":
+    "2016 至 2019 年间的可比板面作品成交价在 30,000 英镑至 38,000 英镑之间。",
+  "Purchased from the artist's gallery by the current owner in 2018. Gallery invoice and exhibition documentation available.":
+    "现藏家于 2018 年从艺术家代理画廊购得，并有画廊发票和展览文件支持。",
+  "Excellent condition. No visible structural issues or restoration history.":
+    "品相极佳，未见明显结构问题或修复历史。",
+  "Several specialist critics identify Ramirez as a consistent mid-career painter, though broader international attention remains moderate.":
+    "多位专业评论者认为 Ramirez 是一位稳定发展的中生代画家，但更广泛的国际关注度仍为中等。",
+  "Prices show gradual growth rather than rapid speculation.":
+    "价格呈现渐进增长，而非快速投机性上涨。",
+  "Main risk is moderate liquidity rather than authenticity or condition.":
+    "主要风险是流动性中等，而非真伪或品相问题。",
+  "This case has stronger evidence stability than short-term excitement. AI filtering prioritises comparables, condition and steady reputation signals.":
+    "该案例的证据稳定性强于短期热度。AI 过滤优先呈现可比销售、品相和稳定声誉信号。",
+  "Comparable sales cluster around £30,000-£38,000, suggesting a relatively stable reference range.":
+    "可比销售集中在 30,000 英镑至 38,000 英镑之间，显示相对稳定的参考区间。",
+  "The artist has consistent gallery and regional museum visibility, but limited international institutional presence.":
+    "该艺术家具有稳定的画廊和地区博物馆可见度，但国际机构存在感有限。",
+  "The work belongs to a recognised period, has favourable condition notes and includes supporting gallery documentation.":
+    "该作品属于艺术家较受认可的时期，品相说明良好，并有画廊文件支持。",
+  "Risk appears moderate. Liquidity is not high, but price volatility and authenticity concerns are limited.":
+    "整体风险为中等。流动性不高，但价格波动和真伪担忧较有限。",
+  "Specialist critic support and gallery consistency are positive, while broader collector excitement is restrained.":
+    "专业评论支持和稳定画廊代理是积极信号，但更广泛的藏家热度较为克制。",
+  "The work is representative of Ramirez's textured memory-led practice, but its symbolic value requires human interpretation.":
+    "该作品代表了 Ramirez 以肌理和记忆为核心的创作实践，但其象征价值仍需人类解释。",
+
+  "Lina Okafor is an established artist whose work addresses migration, textile memory and postcolonial archives.":
+    "Lina Okafor 是一位成熟艺术家，其作品关注迁移、纺织记忆和后殖民档案。",
+  "Included in major museum group exhibitions and a touring institutional survey in 2020.":
+    "曾入选重要博物馆群展，并于 2020 年参加巡回机构研究展。",
+  "Represented by an internationally recognised gallery. Primary-market access is limited.":
+    "由一家国际知名画廊代理，一级市场购买机会有限。",
+  "Auction records are strong but infrequent. Similar textile works have sold between £70,000 and £95,000.":
+    "拍卖记录表现强劲但频率较低。相似纺织作品成交价在 70,000 英镑至 95,000 英镑之间。",
+  "Comparable works from 2010-2014 are rare. The strongest comparable sold for £92,000 in 2024.":
+    "2010 至 2014 年间的可比作品较少。最强可比作品于 2024 年以 92,000 英镑成交。",
+  "Private collection since 2013; acquired through the artist's gallery. Exhibition loan record available.":
+    "自 2013 年起由私人收藏，经艺术家代理画廊购得，并有展览借展记录。",
+  "Good condition, but textile works require conservation-sensitive handling and display.":
+    "品相良好，但纺织作品需要对保存条件敏感的处理和展示方式。",
+  "Strong museum recognition and specialist curatorial attention. Collector base is smaller but committed.":
+    "具有较强博物馆认可和专业策展关注。藏家群体较小，但较为稳定。",
+  "Institutional interest has increased, but works enter the secondary market infrequently.":
+    "机构兴趣有所增加，但作品进入二级市场的频率较低。",
+  "Low frequency of resale makes liquidity uncertain despite strong cultural and institutional signals.":
+    "尽管文化和机构信号较强，但低转售频率使流动性存在不确定性。",
+  "This case shows strong institutional and cultural signals but low market liquidity. AI filtering separates value evidence from resale constraints.":
+    "该案例具有强机构和文化信号，但市场流动性较低。AI 过滤将价值证据与转售限制区分开来。",
+  "Comparable sales are strong but sparse. The reference range is informative but based on limited transaction frequency.":
+    "可比销售表现强劲但数量稀少。参考价格区间有信息价值，但基于有限交易频率。",
+  "The artist has strong institutional recognition and international gallery representation.":
+    "该艺术家具有较强机构认可和国际画廊代理。",
+  "The work is from a valued period and has supporting provenance. Textile conservation requirements should be considered.":
+    "该作品来自较受重视的时期，并有来源记录支持；同时应考虑纺织作品保存要求。",
+  "The main risk is liquidity: strong reputation does not guarantee easy resale because comparable works appear infrequently.":
+    "主要风险是流动性：强声誉并不保证容易转售，因为可比作品出现频率较低。",
+  "Museum exhibitions, curatorial attention and gallery representation provide strong expert and institutional signals.":
+    "博物馆展览、策展关注和画廊代理提供了强专家与机构信号。",
+  "Cultural significance appears high, but the depth of symbolic value depends on specialist interpretation.":
+    "文化意义看起来较高，但象征价值的深度仍依赖专业解释。",
+
+  "Elias Venn is a rapidly visible artist associated with post-digital abstraction and platform-based collector communities.":
+    "Elias Venn 是一位迅速获得可见度的艺术家，与后数字抽象和平台化藏家社群相关。",
+  "Recent inclusion in two commercial group shows and a digital art fair presentation.":
+    "近期入选两次商业群展和一次数字艺术博览会展示。",
+  "No long-term gallery representation. Sales are mainly handled through limited drops and online intermediaries.":
+    "没有长期画廊代理，销售主要通过限量发布和线上中介完成。",
+  "Four auction appearances in the past year. Prices increased from £9,000 to £31,000 within ten months.":
+    "过去一年中出现四次拍卖记录，价格在十个月内从 9,000 英镑升至 31,000 英镑。",
+  "Comparable works are difficult to verify because several sales occurred through private online channels.":
+    "可比作品难以核实，因为部分销售通过私人线上渠道完成。",
+  "Direct purchase from a limited online release. Certificate supplied by the artist's studio.":
+    "通过限量线上发布直接购买，并由艺术家工作室提供证书。",
+  "New work in excellent physical condition, but long-term conservation of resin and digital print materials is uncertain.":
+    "新作物理品相极佳，但树脂和数字打印材料的长期保存情况不确定。",
+  "High online attention and collector discussion, but limited independent critical or institutional recognition.":
+    "线上关注度和藏家讨论度较高，但独立评论和机构认可有限。",
+  "Rapid price acceleration suggests momentum but may also indicate speculative hype.":
+    "价格快速上涨显示市场动能，但也可能意味着投机性炒作。",
+  "Key risks include short market history, weak institutional validation, uncertain resale depth and media conservation uncertainty.":
+    "主要风险包括市场历史较短、机构验证较弱、转售深度不确定，以及媒介保存不确定性。",
+  "This case is momentum-heavy and evidence-light. AI filtering highlights hype risk, verification limits and the difference between social visibility and durable reputation.":
+    "该案例市场动能强但证据较弱。AI 过滤突出炒作风险、验证限制，以及社交可见度与持久声誉之间的区别。",
+  "Recent prices rose quickly, but comparable sales are difficult to verify and the market history is very short.":
+    "近期价格快速上涨，但可比销售难以核实，市场历史也很短。",
+  "The artist has high online visibility but limited gallery stability and little institutional recognition.":
+    "该艺术家线上可见度高，但画廊稳定性有限，机构认可较少。",
+  "The work is new and in good condition, but material longevity and certificate verification deserve attention.":
+    "该作品较新且品相良好，但材料寿命和证书核验值得关注。",
+  "Major risks include hype-driven overvaluation, uncertain resale depth and weak independent validation.":
+    "主要风险包括炒作驱动的高估、转售深度不确定和独立验证较弱。",
+  "Collector attention is strong online, but critical and institutional signals remain limited.":
+    "线上藏家关注较强，但评论和机构信号仍然有限。",
+  "The work aligns with post-digital abstraction, but cultural significance is not yet established.":
+    "该作品符合后数字抽象方向，但文化意义尚未建立。"
+};
+
+function bilingual(text) {
+  const zh = textZh[text];
+  return zh ? `${text}<br /><span class="zh-text">${zh}</span>` : text;
+}
+
 const state = {
   participantId: "",
   assignment: "",
@@ -407,7 +558,7 @@ function renderRawDossier(artwork, title = "") {
         <article class="info-block">
           <h4>${meta.label}</h4>
           ${meta.hint ? `<p class="knowledge-hint">${meta.hint}</p>` : ""}
-          <p>${text}</p>
+          <p>${bilingual(text)}</p>
         </article>
       `;
     })
@@ -433,7 +584,7 @@ function renderInterface(task, artwork) {
         <div class="module-body">
           <p class="knowledge-hint">${meta.hint}</p>
           <div class="priority ${priority}">${priorityLabels[priority] || priority} decision relevance / 决策相关性</div>
-          <p>${text}</p>
+          <p>${bilingual(text)}</p>
         </div>
       </article>
     `;
@@ -442,7 +593,7 @@ function renderInterface(task, artwork) {
 
   return `
     <div class="ai-report">
-      <div class="report-lead"><strong>AI-filtered knowledge report / AI 过滤知识报告：</strong> ${artwork.ai.lead}</div>
+      <div class="report-lead"><strong>AI-filtered knowledge report / AI 过滤知识报告：</strong> ${bilingual(artwork.ai.lead)}</div>
       ${modules}
       <details class="source-dossier" open>
         <summary>Original artwork information / 原始艺术品资料</summary>
@@ -469,7 +620,7 @@ function renderTask() {
     task.interface === "ai_filtered" ? "AI knowledge filtering interface / AI 知识过滤界面" : "Unfiltered information interface / 未过滤信息界面";
   $("#artworkImage").src = artwork.image;
   $("#artworkImage").alt = `${artwork.title} by ${artwork.artist}`;
-  $("#artworkMeta").textContent = artwork.meta;
+  $("#artworkMeta").innerHTML = `${artwork.meta}<br /><span class="zh-text">${artwork.metaZh}</span>`;
   $("#interfaceContent").innerHTML = renderInterface(task, artwork);
 
   const scaleSet = task.interface === "ai_filtered" ? [...scales, trustScale] : [...scales];
