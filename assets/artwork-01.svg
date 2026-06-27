@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Fictional abstract artwork Chromatic Index">
+  <rect width="800" height="1000" fill="#f4efe8"/>
+  <path d="M60 160 C180 60 310 110 420 190 S640 310 740 190" fill="none" stroke="#2457a6" stroke-width="34" opacity=".85"/>
+  <path d="M100 320 C260 210 420 290 520 405 S640 550 735 470" fill="none" stroke="#e06f4f" stroke-width="42" opacity=".78"/>
+  <path d="M70 705 C190 590 300 615 430 720 S625 850 745 760" fill="none" stroke="#28715a" stroke-width="38" opacity=".78"/>
+  <rect x="154" y="158" width="96" height="690" fill="#172033" opacity=".09"/>
+  <rect x="356" y="112" width="70" height="790" fill="#172033" opacity=".08"/>
+  <rect x="565" y="214" width="88" height="590" fill="#172033" opacity=".08"/>
+  <circle cx="230" cy="448" r="52" fill="#f6c453" opacity=".82"/>
+  <circle cx="590" cy="635" r="74" fill="#2457a6" opacity=".2"/>
+  <circle cx="472" cy="260" r="38" fill="#9a2d2d" opacity=".6"/>
+</svg>

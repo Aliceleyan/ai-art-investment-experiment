@@ -1,0 +1,39 @@
+variable,level,description
+participantId,participant,Automatically generated anonymous participant identifier
+assignment,participant,Counterbalancing assignment A or B
+experienceGroup,participant,Classified as experienced or non_experienced based on art-market role or years of experience
+artExperience,participant,Participant's art investment or art-market experience category
+yearsExperience,participant,Self-reported years of art-market experience
+investmentExperience,participant,General investment experience
+aiFamiliarity,participant,Self-reported familiarity with AI tools
+riskPreference,participant,Risk preference from 1 very cautious to 7 very risk-seeking
+artInterest,participant,Interest in art from 1 low to 7 high
+ageGroup,participant,Age band
+education,participant,Highest education category
+taskNumber,artwork-task,Order in which the artwork task was presented
+artworkId,artwork-task,Fictional artwork identifier
+artworkTitle,artwork-task,Fictional artwork title
+artist,artwork-task,Fictional artist name
+interface,artwork-task,Unfiltered information or AI-filtered knowledge interface
+valuation,artwork-task,Participant's reasonable market value judgment in GBP
+wtp,artwork-task,Participant's maximum willingness to pay in GBP
+risk,artwork-task,Perceived investment risk from 1 very low to 7 very high
+intention,artwork-task,Investment intention from 1 very unlikely to 7 very likely
+confidence,artwork-task,Decision confidence from 1 not confident to 7 very confident
+knowledgeQuality,artwork-task,Perceived knowledge quality from 1 very low to 7 very high
+informationOverload,artwork-task,Perceived information overload from 1 not overloaded to 7 very overloaded
+trustAI,artwork-task,Trust in AI-filtered knowledge from 1 do not trust to 7 trust completely; blank for unfiltered tasks
+taskTimeMs,behavioural,Milliseconds spent on each artwork task
+moduleStats,behavioural,JSON string recording AI module clicks and time spent in each opened module
+preferredInterface,reflection,Final preference among unfiltered interface AI-filtered interface or depends
+aiSuitableTypes,reflection,Selected knowledge types suitable for AI filtering; multiple selections separated by |
+aiSuitableNote,reflection,Optional open-ended note about knowledge types suitable for AI filtering
+humanExpertiseTypes,reflection,Selected knowledge types requiring human expertise; multiple selections separated by |
+humanExpertiseNote,reflection,Optional open-ended note about knowledge types requiring human expertise
+realUse,reflection,Open-ended response about whether the participant would use this AI tool in real decisions
+aiMarket,reflection,Suitability of AI filtering for market records and comparable sales from 1 to 7
+aiArtist,reflection,Suitability of AI filtering for artist background and reputation from 1 to 7
+aiObject,reflection,Suitability of AI filtering for artwork-specific information from 1 to 7
+aiRisk,reflection,Suitability of AI filtering for risk signals from 1 to 7
+aiExpert,reflection,Suitability of AI filtering for expert and institutional signals from 1 to 7
+aiAesthetic,reflection,Suitability of AI filtering for aesthetic and cultural value from 1 to 7

@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Enabled Knowledge Filtering Experiment</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Experiment progress">
+        <div class="brand">
+          <span class="brand-mark">KF</span>
+          <div>
+            <p class="eyebrow">Art Investment Study / 艺术品投资研究</p>
+            <h1>Knowledge Filtering Experiment / 知识过滤实验</h1>
+          </div>
+        </div>
+
+        <ol class="steps" id="progressSteps">
+          <li data-step="consent" class="active">Consent / 同意</li>
+          <li data-step="background">Background / 背景</li>
+          <li data-step="instructions">Instructions / 说明</li>
+          <li data-step="tasks">Artwork tasks / 作品任务</li>
+          <li data-step="reflection">Reflection / 反馈</li>
+          <li data-step="complete">Export / 导出</li>
+        </ol>
+
+        <div class="session-card">
+          <p class="label">Participant ID / 参与者编号</p>
+          <strong id="participantId">Not started / 尚未开始</strong>
+          <p class="muted" id="assignmentLabel">Assignment appears after consent. / 同意后显示分配条件。</p>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <section class="screen active" id="screen-consent">
+          <p class="eyebrow">Step 1</p>
+          <h2>Participant Consent / 参与同意</h2>
+          <p>
+            You are invited to take part in a study about how different information
+            interfaces influence art investment decision-making. You will evaluate
+            four fictional artwork investment opportunities. Some pages show
+            conventional artwork information, while others show information organised
+            through an AI-enabled knowledge filtering interface.
+            <br /><br />
+            您将参加一项关于不同信息界面如何影响艺术品投资决策的研究。您需要评估四个虚构艺术品投资案例；部分页面展示传统艺术品资料，部分页面展示由 AI 知识过滤界面组织的信息。
+          </p>
+          <div class="notice">
+            <strong>Important / 重要说明：</strong> The AI interface does not provide investment
+            advice, a final buy/sell recommendation, or a single correct price. It
+            only organises and interprets decision-relevant knowledge for research
+            purposes.
+            <br />
+            AI 界面不会提供投资建议、最终买卖推荐或唯一正确价格；它仅用于组织和解释与决策相关的知识。
+          </div>
+          <label class="check-row">
+            <input id="consentCheck" type="checkbox" />
+            <span>I am at least 18 years old and agree to participate voluntarily. / 我已年满 18 岁，并自愿同意参加本研究。</span>
+          </label>
+          <div class="actions">
+            <button class="primary" id="startBtn" disabled>Start study / 开始实验</button>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-background">
+          <p class="eyebrow">Step 2</p>
+          <h2>Background Questionnaire / 背景问卷</h2>
+          <form id="backgroundForm" class="form-grid">
+            <label>
+              Art investment / market experience / 艺术品投资或艺术市场经验
+              <select name="artExperience" required>
+                <option value="">Select one / 请选择</option>
+                <option value="none">No specialised experience / 无专业经验</option>
+                <option value="collector">Collector or art investor / 收藏家或艺术品投资者</option>
+                <option value="advisor">Art advisor / consultant / 艺术顾问</option>
+                <option value="gallery">Gallery / auction / art-market professional / 画廊、拍卖或艺术市场从业者</option>
+                <option value="research">Art researcher / curator / critic / 艺术研究者、策展人或评论者</option>
+              </select>
+            </label>
+            <label>
+              Years of art-market experience / 艺术市场经验年数
+              <input name="yearsExperience" type="number" min="0" max="60" required />
+            </label>
+            <label>
+              General investment experience / 一般投资经验
+              <select name="investmentExperience" required>
+                <option value="">Select one / 请选择</option>
+                <option value="none">None / 无</option>
+                <option value="limited">Limited / 较少</option>
+                <option value="moderate">Moderate / 中等</option>
+                <option value="extensive">Extensive / 丰富</option>
+              </select>
+            </label>
+            <label>
+              Familiarity with AI tools / 对 AI 工具的熟悉程度
+              <select name="aiFamiliarity" required>
+                <option value="">Select one / 请选择</option>
+                <option value="low">Low / 低</option>
+                <option value="moderate">Moderate / 中等</option>
+                <option value="high">High / 高</option>
+              </select>
+            </label>
+            <label>
+              Risk preference / 风险偏好
+              <input name="riskPreference" type="range" min="1" max="7" value="4" />
+              <span class="range-label">1 = very cautious / 非常谨慎, 7 = very risk-seeking / 非常愿意冒险</span>
+            </label>
+            <label>
+              Interest in art / 对艺术的兴趣
+              <input name="artInterest" type="range" min="1" max="7" value="4" />
+              <span class="range-label">1 = low interest / 兴趣较低, 7 = high interest / 兴趣很高</span>
+            </label>
+            <label>
+              Age group / 年龄组
+              <select name="ageGroup" required>
+                <option value="">Select one / 请选择</option>
+                <option value="18-24">18-24</option>
+                <option value="25-34">25-34</option>
+                <option value="35-44">35-44</option>
+                <option value="45-54">45-54</option>
+                <option value="55+">55+</option>
+              </select>
+            </label>
+            <label>
+              Education / 教育程度
+              <select name="education" required>
+                <option value="">Select one / 请选择</option>
+                <option value="undergraduate">Undergraduate or below / 本科或以下</option>
+                <option value="masters">Master's degree / 硕士</option>
+                <option value="doctorate">Doctorate / 博士</option>
+                <option value="professional">Professional qualification / 专业资格</option>
+              </select>
+            </label>
+          </form>
+          <div class="actions">
+            <button class="secondary" data-back="consent">Back / 返回</button>
+            <button class="primary" id="backgroundNext">Continue / 继续</button>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-instructions">
+          <p class="eyebrow">Step 3</p>
+          <h2>Instructions / 实验说明</h2>
+          <p>
+            Please imagine that you are considering whether each fictional artwork is
+            worth investing in. Review the information shown on each page and then
+            answer the investment judgment questions.
+            <br /><br />
+            请想象您正在考虑每件虚构艺术品是否值得投资。请阅读页面信息，然后回答投资判断问题。
+          </p>
+          <div class="instruction-grid">
+            <div>
+              <h3>Unfiltered information / 未过滤信息</h3>
+              <p>Conventional artwork dossier with raw information blocks. / 传统艺术品资料，以原始信息块呈现。</p>
+            </div>
+            <div>
+              <h3>AI knowledge filtering / AI 知识过滤</h3>
+              <p>Same underlying information plus an AI-filtered report organised into decision-relevant knowledge modules. / 包含相同原始信息，并额外提供按决策相关知识模块组织的 AI 过滤报告。</p>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="secondary" data-back="background">Back / 返回</button>
+            <button class="primary" id="beginTasks">Begin artwork tasks / 开始艺术品评估</button>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-tasks">
+          <div class="task-header">
+            <div>
+              <p class="eyebrow" id="taskCount">Task</p>
+              <h2 id="artworkTitle">Artwork title</h2>
+              <p class="muted" id="interfaceBadge">Interface</p>
+            </div>
+            <div class="timer" aria-live="polite">
+              <span>Time on task / 作答时间</span>
+              <strong id="taskTimer">00:00</strong>
+            </div>
+          </div>
+
+          <div class="artwork-layout">
+            <figure class="artwork-card">
+              <img id="artworkImage" alt="Fictional abstract artwork" />
+              <figcaption id="artworkMeta">Artwork metadata</figcaption>
+            </figure>
+            <div id="interfaceContent" class="interface-content"></div>
+          </div>
+
+          <form id="taskForm" class="task-form">
+            <h3>Post-task measures / 任务后问题</h3>
+            <div class="measure-grid">
+              <label>
+                Reasonable market value (£) / 您认为合理的市场价值（英镑）
+                <input name="valuation" type="number" min="0" step="100" required />
+              </label>
+              <label>
+                Maximum willingness to pay (£) / 您愿意支付的最高金额（英镑）
+                <input name="wtp" type="number" min="0" step="100" required />
+              </label>
+            </div>
+            <div id="scaleItems"></div>
+          </form>
+
+          <div class="actions">
+            <button class="primary" id="nextTask">Submit and continue / 提交并继续</button>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-reflection">
+          <p class="eyebrow">Step 5</p>
+          <h2>Final Reflection / 最终反馈</h2>
+          <form id="reflectionForm" class="reflection-form">
+            <label>
+              Which interface did you find more useful? / 您认为哪种界面更有用？
+              <select name="preferredInterface" required>
+                <option value="">Select one / 请选择</option>
+                <option value="unfiltered">Unfiltered information / 未过滤信息</option>
+                <option value="ai_filtered">AI knowledge filtering / AI 知识过滤</option>
+                <option value="depends">It depends on the artwork / 取决于艺术品案例</option>
+              </select>
+            </label>
+            <fieldset class="choice-panel">
+              <legend>Which knowledge types is AI most suitable for filtering? / 您认为 AI 最适合过滤哪些知识类型？</legend>
+              <p class="hint">You may select multiple options. / 可多选。</p>
+              <div id="aiSuitableChoices" class="knowledge-choice-grid"></div>
+              <label>
+                Optional note / 可选补充
+                <textarea name="aiSuitableNote" rows="2"></textarea>
+              </label>
+            </fieldset>
+            <fieldset class="choice-panel">
+              <legend>Which knowledge types should remain dependent on human expertise? / 哪些知识类型仍应主要依赖人类专家判断？</legend>
+              <p class="hint">You may select multiple options. / 可多选。</p>
+              <div id="humanExpertiseChoices" class="knowledge-choice-grid"></div>
+              <label>
+                Optional note / 可选补充
+                <textarea name="humanExpertiseNote" rows="2"></textarea>
+              </label>
+            </fieldset>
+            <label>
+              Would you use this kind of AI tool in real art investment decisions? / 如果是真实艺术品投资决策，您是否会使用这种 AI 工具？
+              <textarea name="realUse" rows="3" required></textarea>
+            </label>
+            <div class="suitability-panel">
+              <h3>Suitability of AI filtering for different knowledge types / AI 过滤不同知识类型的适配度</h3>
+              <p class="muted">1 = not suitable at all / 完全不适合, 7 = very suitable / 非常适合</p>
+              <div id="suitabilityScales" class="scale-list"></div>
+            </div>
+          </form>
+          <div class="actions">
+            <button class="primary" id="finishStudy">Finish study / 完成实验</button>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-complete">
+          <p class="eyebrow">Complete</p>
+          <h2>Thank you / 谢谢参与</h2>
+          <p>
+            Your responses have been saved in this browser. Download the data file
+            and send it to the researcher if requested.
+            <br />
+            您的回答已保存在当前浏览器中。请根据研究者要求下载数据文件。
+          </p>
+          <div class="export-grid">
+            <button class="primary" id="downloadCsv">Download CSV / 下载 CSV</button>
+            <button class="secondary" id="downloadJson">Download JSON / 下载 JSON</button>
+            <button class="secondary" id="resetStudy">Reset study / 重置实验</button>
+          </div>
+          <pre id="summaryBox" class="summary-box"></pre>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
