@@ -3,12 +3,13 @@ from pathlib import Path
 import csv
 import io
 import json
+import os
 import sqlite3
 import time
 
 
 ROOT = Path(__file__).resolve().parent
-DATA_DIR = ROOT / "experiment-data"
+DATA_DIR = Path(os.environ.get("DATA_DIR", ROOT / "experiment-data")).expanduser()
 DB_PATH = DATA_DIR / "responses.sqlite3"
 
 
@@ -184,8 +185,9 @@ class ExperimentHandler(SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     init_db()
-    port = 8081
-    server = ThreadingHTTPServer(("127.0.0.1", port), ExperimentHandler)
-    print(f"Experiment server running at http://127.0.0.1:{port}")
+    port = int(os.environ.get("PORT", "8081"))
+    host = "0.0.0.0"
+    server = ThreadingHTTPServer((host, port), ExperimentHandler)
+    print(f"Experiment server running at http://{host}:{port}")
     print(f"SQLite database: {DB_PATH}")
     server.serve_forever()
