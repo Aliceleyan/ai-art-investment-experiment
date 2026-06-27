@@ -191,11 +191,13 @@
             <div class="measure-grid">
               <label>
                 Reasonable market value (£) / 您认为合理的市场价值（英镑）
-                <input name="valuation" type="number" min="0" step="100" required />
+                <input name="valuation" type="number" min="100" step="100" placeholder="Minimum £100 / 不低于 100 英镑" required />
+                <span class="range-label">Please enter an amount of at least £100. / 请输入不低于 100 英镑的金额。</span>
               </label>
               <label>
                 Maximum willingness to pay (£) / 您愿意支付的最高金额（英镑）
-                <input name="wtp" type="number" min="0" step="100" required />
+                <input name="wtp" type="number" min="100" step="100" placeholder="Minimum £100 / 不低于 100 英镑" required />
+                <span class="range-label">Please enter an amount of at least £100. / 请输入不低于 100 英镑的金额。</span>
               </label>
             </div>
             <div id="scaleItems"></div>

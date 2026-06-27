@@ -204,39 +204,39 @@ const knowledgeTypes = [
   {
     value: "market",
     label: "Market knowledge / 市场知识",
-    hint: "Information about prices, transactions and market demand, such as auction records, price trends, comparable sales, liquidity and collector demand. / 关于价格、交易和市场需求的信息，例如拍卖记录、价格趋势、可比销售、流动性和藏家需求。"
+    hint: "Information about prices, transactions and market demand, such as auction records, price trends, comparable sales, liquidity and collector demand. / 与价格、交易和市场需求有关的信息，例如拍卖记录、价格趋势、可比销售、流动性和藏家需求。"
   },
   {
     value: "artist",
     label: "Artist reputation knowledge / 艺术家声誉知识",
-    hint: "Information about the artist's career position and reputation, such as career stage, gallery representation, exhibitions and museum collections. / 关于艺术家职业位置和声誉的信息，例如职业阶段、画廊代理、展览经历和博物馆收藏。"
+    hint: "Information about the artist's career position and reputation, such as career stage, gallery representation, exhibitions and museum collections. / 与艺术家职业发展和市场声誉有关的信息，例如职业阶段、画廊代理、展览经历和博物馆收藏。"
   },
   {
     value: "object",
     label: "Object-specific knowledge / 作品自身知识",
-    hint: "Information about the specific artwork itself, such as medium, size, year, condition, provenance, rarity and authenticity risk. / 关于该件作品本身的信息，例如媒介、尺寸、年份、品相、来源、稀缺性和真伪风险。"
+    hint: "Information about the specific artwork itself, such as medium, size, year, condition, provenance, rarity and authenticity risk. / 与这件作品本身有关的信息，例如媒介、尺寸、年份、品相、来源、稀缺性和真伪风险。"
   },
   {
     value: "risk",
     label: "Risk knowledge / 风险知识",
-    hint: "Information that helps assess investment uncertainty, such as price volatility, liquidity risk, overvaluation risk, authenticity risk and trend risk. / 帮助判断投资不确定性的信息，例如价格波动、流动性风险、高估风险、真伪风险和趋势风险。"
+    hint: "Information that helps assess investment uncertainty, such as price volatility, liquidity risk, overvaluation risk, authenticity risk and trend risk. / 用于判断投资不确定性的信息，例如价格波动、流动性风险、高估风险、真伪风险和趋势风险。"
   },
   {
     value: "expert",
     label: "Social and expert signal knowledge / 社会与专家信号知识",
-    hint: "Signals from experts, institutions and social attention, such as expert opinions, critic reviews, gallery endorsement, institutional backing and social visibility. / 来自专家、机构和社会关注度的信号，例如专家意见、评论文章、画廊背书、机构认可和社交可见度。"
+    hint: "Signals from experts, institutions and social attention, such as expert opinions, critic reviews, gallery endorsement, institutional backing and social visibility. / 来自专家、机构和公众关注的信号，例如专家意见、评论文章、画廊背书、机构认可和社交可见度。"
   },
   {
     value: "aesthetic",
     label: "Aesthetic and cultural knowledge / 审美与文化知识",
-    hint: "Interpretive knowledge about artistic and cultural meaning, such as style, aesthetic quality, cultural significance, symbolic value and art-historical relevance. / 关于艺术与文化意义的解释性知识，例如风格、审美质量、文化意义、象征价值和艺术史相关性。"
+    hint: "Interpretive knowledge about artistic and cultural meaning, such as style, aesthetic quality, cultural significance, symbolic value and art-historical relevance. / 与艺术和文化意义有关的解释性知识，例如风格、审美质量、文化意义、象征价值和艺术史相关性。"
   }
 ];
 
 const rawKnowledgeLabels = {
   "Artist biography": {
     label: "Artist biography / 艺术家简介",
-    hint: "Basic background about the artist and their practice. / 关于艺术家及其创作实践的基本背景。"
+    hint: "Basic background about the artist and their practice. / 艺术家及其创作实践的基本背景。"
   },
   "Exhibition history": {
     label: "Exhibition history / 展览历史",
@@ -244,7 +244,7 @@ const rawKnowledgeLabels = {
   },
   "Gallery representation": {
     label: "Gallery representation / 画廊代理",
-    hint: "Whether a gallery represents or supports the artist's market. / 是否有画廊代理或支持艺术家的市场发展。"
+    hint: "Whether a gallery represents or supports the artist's market. / 艺术家是否有画廊代理，或是否得到画廊的市场支持。"
   },
   "Auction records": {
     label: "Auction records / 拍卖记录",
@@ -256,7 +256,7 @@ const rawKnowledgeLabels = {
   },
   Provenance: {
     label: "Provenance / 来源记录",
-    hint: "Ownership history and acquisition documentation. / 作品所有权历史和购买来源文件。"
+    hint: "Ownership history and acquisition documentation. / 作品的所有权历史和购买来源文件。"
   },
   "Condition notes": {
     label: "Condition notes / 品相说明",
@@ -264,7 +264,7 @@ const rawKnowledgeLabels = {
   },
   "Signals and commentary": {
     label: "Signals and commentary / 信号与评论",
-    hint: "Critical, collector, gallery or institutional attention around the artist or work. / 围绕艺术家或作品的评论、藏家、画廊或机构关注。"
+    hint: "Critical, collector, gallery or institutional attention around the artist or work. / 艺术家或作品获得的评论、藏家、画廊或机构关注。"
   },
   "Market trend notes": {
     label: "Market trend notes / 市场趋势说明",
@@ -293,144 +293,144 @@ const priorityLabels = {
 
 const textZh = {
   "Mara Ellison is a London-based emerging painter whose work has appeared in two group exhibitions and one small gallery solo show. Her practice focuses on layered colour fields and coded urban maps.":
-    "Mara Ellison 是一位伦敦新兴画家，其作品曾参加两次群展和一次小型画廊个展。她的创作关注层叠色域和编码化城市地图。",
+    "Mara Ellison 是一位常驻伦敦的新兴画家。她曾参加两次群展和一次小型画廊个展，创作主要围绕层叠色域和编码化城市地图展开。",
   "Group exhibitions at Northbank Project Space and Alder Gallery. Solo presentation at Finch Lane Projects in 2023.":
     "曾在 Northbank Project Space 和 Alder Gallery 参加群展，并于 2023 年在 Finch Lane Projects 举办个人展示。",
   "Represented by a mid-tier contemporary gallery with growing online collector visibility.":
-    "由一家中等规模当代画廊代理，并在网络藏家群体中获得逐渐上升的可见度。",
+    "由一家中等规模的当代画廊代理，在网络藏家群体中的可见度正在上升。",
   "Only three public auction records are available. Results range from £14,800 to £22,500, with one lot bought in.":
     "目前仅有三条公开拍卖记录，成交结果在 14,800 英镑至 22,500 英镑之间，其中一件流拍。",
   "Recent works of similar scale by the artist have been offered between £18,000 and £24,000 in primary and secondary-market contexts.":
-    "该艺术家近期相似尺寸作品在一级和二级市场中的报价大致为 18,000 英镑至 24,000 英镑。",
+    "该艺术家近期相似尺寸作品在一级市场和二级市场中的报价大致为 18,000 至 24,000 英镑。",
   "Acquired from the artist's gallery by a private collector in 2022. No complex ownership history is reported.":
     "由私人藏家于 2022 年从艺术家代理画廊购得；目前未显示复杂所有权历史。",
   "Overall good condition, with minor surface abrasions visible under raking light.":
-    "整体品相良好，但在侧光下可见轻微表面擦痕。",
+    "整体品相良好，但在侧光下可以看到轻微表面擦痕。",
   "The artist has received several critic mentions and increased social visibility, but there is limited museum acquisition evidence.":
-    "该艺术家获得若干评论提及并提升了社交可见度，但博物馆收藏证据仍有限。",
+    "该艺术家曾被若干评论文章提及，社交平台可见度也有所提升，但目前缺乏充分的博物馆收藏证据。",
   "Short-term demand has increased, particularly among younger collectors, although sales frequency remains low.":
     "短期需求有所上升，尤其受到年轻藏家关注，但销售频率仍然较低。",
   "Potential risks include limited auction history, uncertain resale liquidity and possible short-term attention effects.":
-    "潜在风险包括拍卖历史有限、转售流动性不确定，以及短期关注带来的价格影响。",
+    "潜在风险包括拍卖历史较短、转售流动性不确定，以及短期关注可能带来的价格波动。",
   "This case presents moderate upside signals but limited resale evidence. AI filtering highlights market liquidity and artist reputation as the most decision-relevant areas.":
-    "该案例呈现中等上行信号，但转售证据有限。AI 过滤将市场流动性和艺术家声誉标记为最相关的决策领域。",
+    "该案例显示出一定的上升潜力，但转售证据仍然有限。AI 过滤结果提示，市场流动性和艺术家声誉是本案例中最需要关注的决策信息。",
   "Comparable sales suggest a reference range between £18,000 and £24,000. However, sales frequency is low, indicating limited secondary-market liquidity.":
     "可比销售显示参考区间约为 18,000 英镑至 24,000 英镑。然而销售频率较低，说明二级市场流动性有限。",
   "The artist has growing gallery visibility and critic attention, but institutional validation remains early-stage.":
     "该艺术家的画廊可见度和评论关注度正在上升，但机构认可仍处于早期阶段。",
   "The size and medium are commercially favourable. Minor surface abrasions should be checked before purchase.":
-    "作品尺寸和媒介在商业上较有利，但购买前应进一步检查轻微表面擦痕。",
+    "作品的尺寸和媒介较符合市场偏好，但购买前仍应进一步检查表面擦痕。",
   "Key risks are limited auction history, one bought-in lot and possible overvaluation from recent short-term attention.":
     "主要风险包括拍卖历史有限、一件流拍记录，以及近期短期关注可能造成的高估。",
   "Gallery representation and critic mentions are positive signals, but independent expert consensus is still limited.":
     "画廊代理和评论提及是积极信号，但独立专家共识仍然有限。",
   "The work is stylistically coherent with the artist's mapped colour-field practice, but cultural significance remains interpretive.":
-    "该作品与艺术家的地图化色域实践在风格上保持一致，但其文化意义仍需解释性判断。",
+    "该作品在风格上延续了艺术家的地图化色域创作，但其文化意义仍需要结合专业语境进行判断。",
 
   "Theo Ramirez is a mid-career artist known for textured panel works exploring memory and industrial labour.":
-    "Theo Ramirez 是一位中生代艺术家，以探索记忆和工业劳动主题的肌理板面作品而闻名。",
+    "Theo Ramirez 是一位中生代艺术家，以带有丰富肌理的板面作品见长，创作主题多围绕记忆与工业劳动展开。",
   "Five gallery solo exhibitions since 2014 and inclusion in two regional museum group shows.":
     "自 2014 年以来举办过五次画廊个展，并入选两次地区博物馆群展。",
   "Stable representation by a respected regional gallery, with periodic participation in international art fairs.":
-    "由一家受尊重的地区画廊稳定代理，并定期参加国际艺术博览会。",
+    "由一家信誉较好的地区画廊稳定代理，并不定期参加国际艺术博览会。",
   "Nine auction records since 2018. Most lots sold within estimate, with a narrow price range from £28,000 to £36,000.":
-    "自 2018 年以来有九条拍卖记录。多数拍品在估价范围内成交，价格区间较窄，为 28,000 英镑至 36,000 英镑。",
+    "自 2018 年以来共有九条拍卖记录。多数拍品在估价范围内成交，价格区间较集中，约为 28,000 至 36,000 英镑。",
   "Comparable panel works from 2016-2019 have sold between £30,000 and £38,000.":
     "2016 至 2019 年间的可比板面作品成交价在 30,000 英镑至 38,000 英镑之间。",
   "Purchased from the artist's gallery by the current owner in 2018. Gallery invoice and exhibition documentation available.":
-    "现藏家于 2018 年从艺术家代理画廊购得，并有画廊发票和展览文件支持。",
+    "现藏家于 2018 年从艺术家代理画廊购得，附有画廊发票和展览文件。",
   "Excellent condition. No visible structural issues or restoration history.":
     "品相极佳，未见明显结构问题或修复历史。",
   "Several specialist critics identify Ramirez as a consistent mid-career painter, though broader international attention remains moderate.":
-    "多位专业评论者认为 Ramirez 是一位稳定发展的中生代画家，但更广泛的国际关注度仍为中等。",
+    "多位专业评论者认为 Ramirez 是一位发展稳定的中生代画家，但其国际关注度仍属中等。",
   "Prices show gradual growth rather than rapid speculation.":
     "价格呈现渐进增长，而非快速投机性上涨。",
   "Main risk is moderate liquidity rather than authenticity or condition.":
     "主要风险是流动性中等，而非真伪或品相问题。",
   "This case has stronger evidence stability than short-term excitement. AI filtering prioritises comparables, condition and steady reputation signals.":
-    "该案例的证据稳定性强于短期热度。AI 过滤优先呈现可比销售、品相和稳定声誉信号。",
+    "该案例的优势在于证据较稳定，而不是短期热度突出。AI 过滤结果优先呈现可比销售、品相和稳定的声誉信号。",
   "Comparable sales cluster around £30,000-£38,000, suggesting a relatively stable reference range.":
     "可比销售集中在 30,000 英镑至 38,000 英镑之间，显示相对稳定的参考区间。",
   "The artist has consistent gallery and regional museum visibility, but limited international institutional presence.":
-    "该艺术家具有稳定的画廊和地区博物馆可见度，但国际机构存在感有限。",
+    "该艺术家在画廊和地区博物馆层面具有稳定可见度，但国际机构认可仍然有限。",
   "The work belongs to a recognised period, has favourable condition notes and includes supporting gallery documentation.":
-    "该作品属于艺术家较受认可的时期，品相说明良好，并有画廊文件支持。",
+    "该作品属于艺术家较受认可的创作时期，品相说明良好，并有画廊文件作为支持。",
   "Risk appears moderate. Liquidity is not high, but price volatility and authenticity concerns are limited.":
     "整体风险为中等。流动性不高，但价格波动和真伪担忧较有限。",
   "Specialist critic support and gallery consistency are positive, while broader collector excitement is restrained.":
     "专业评论支持和稳定画廊代理是积极信号，但更广泛的藏家热度较为克制。",
   "The work is representative of Ramirez's textured memory-led practice, but its symbolic value requires human interpretation.":
-    "该作品代表了 Ramirez 以肌理和记忆为核心的创作实践，但其象征价值仍需人类解释。",
+    "该作品具有 Ramirez 以肌理和记忆为核心的典型特征，但其象征价值仍需要由人结合语境加以判断。",
 
   "Lina Okafor is an established artist whose work addresses migration, textile memory and postcolonial archives.":
-    "Lina Okafor 是一位成熟艺术家，其作品关注迁移、纺织记忆和后殖民档案。",
+    "Lina Okafor 是一位成熟艺术家，作品长期关注迁移、纺织记忆与后殖民档案。",
   "Included in major museum group exhibitions and a touring institutional survey in 2020.":
-    "曾入选重要博物馆群展，并于 2020 年参加巡回机构研究展。",
+    "曾入选重要博物馆群展，并在 2020 年参加巡回机构研究展。",
   "Represented by an internationally recognised gallery. Primary-market access is limited.":
-    "由一家国际知名画廊代理，一级市场购买机会有限。",
+    "由一家国际知名画廊代理，一级市场购藏机会较少。",
   "Auction records are strong but infrequent. Similar textile works have sold between £70,000 and £95,000.":
-    "拍卖记录表现强劲但频率较低。相似纺织作品成交价在 70,000 英镑至 95,000 英镑之间。",
+    "拍卖记录表现较强，但出现频率不高。相似纺织作品成交价在 70,000 至 95,000 英镑之间。",
   "Comparable works from 2010-2014 are rare. The strongest comparable sold for £92,000 in 2024.":
-    "2010 至 2014 年间的可比作品较少。最强可比作品于 2024 年以 92,000 英镑成交。",
+    "2010 至 2014 年间的可比作品较少。其中最有参考价值的一件可比作品于 2024 年以 92,000 英镑成交。",
   "Private collection since 2013; acquired through the artist's gallery. Exhibition loan record available.":
-    "自 2013 年起由私人收藏，经艺术家代理画廊购得，并有展览借展记录。",
+    "自 2013 年起由私人收藏，最初经艺术家代理画廊购得，并有展览借展记录。",
   "Good condition, but textile works require conservation-sensitive handling and display.":
-    "品相良好，但纺织作品需要对保存条件敏感的处理和展示方式。",
+    "品相良好，但纺织类作品对保存、运输和展示条件较为敏感。",
   "Strong museum recognition and specialist curatorial attention. Collector base is smaller but committed.":
-    "具有较强博物馆认可和专业策展关注。藏家群体较小，但较为稳定。",
+    "博物馆认可度和专业策展关注度较高。藏家群体规模不大，但较为稳定。",
   "Institutional interest has increased, but works enter the secondary market infrequently.":
-    "机构兴趣有所增加，但作品进入二级市场的频率较低。",
+    "机构关注度有所上升，但作品进入二级市场的频率较低。",
   "Low frequency of resale makes liquidity uncertain despite strong cultural and institutional signals.":
-    "尽管文化和机构信号较强，但低转售频率使流动性存在不确定性。",
+    "尽管文化价值和机构信号较强，但转售频率较低，因此流动性仍存在不确定性。",
   "This case shows strong institutional and cultural signals but low market liquidity. AI filtering separates value evidence from resale constraints.":
-    "该案例具有强机构和文化信号，但市场流动性较低。AI 过滤将价值证据与转售限制区分开来。",
+    "该案例具有较强的机构和文化信号，但市场流动性偏低。AI 过滤结果将价值支撑因素与转售限制区分开来。",
   "Comparable sales are strong but sparse. The reference range is informative but based on limited transaction frequency.":
-    "可比销售表现强劲但数量稀少。参考价格区间有信息价值，但基于有限交易频率。",
+    "可比销售价格较高，但样本数量有限。参考价格区间具有一定价值，但仍受到交易频率较低的限制。",
   "The artist has strong institutional recognition and international gallery representation.":
-    "该艺术家具有较强机构认可和国际画廊代理。",
+    "该艺术家具有较强的机构认可，并由国际画廊代理。",
   "The work is from a valued period and has supporting provenance. Textile conservation requirements should be considered.":
-    "该作品来自较受重视的时期，并有来源记录支持；同时应考虑纺织作品保存要求。",
+    "该作品来自较受重视的创作时期，并有来源记录支持；同时需要考虑纺织作品的保存要求。",
   "The main risk is liquidity: strong reputation does not guarantee easy resale because comparable works appear infrequently.":
-    "主要风险是流动性：强声誉并不保证容易转售，因为可比作品出现频率较低。",
+    "主要风险在于流动性：声誉较强并不意味着容易转售，因为可比作品很少进入市场。",
   "Museum exhibitions, curatorial attention and gallery representation provide strong expert and institutional signals.":
-    "博物馆展览、策展关注和画廊代理提供了强专家与机构信号。",
+    "博物馆展览、策展关注和画廊代理共同构成了较强的专家与机构信号。",
   "Cultural significance appears high, but the depth of symbolic value depends on specialist interpretation.":
-    "文化意义看起来较高，但象征价值的深度仍依赖专业解释。",
+    "该作品的文化意义较强，但其象征价值的深度仍需要专业解释。",
 
   "Elias Venn is a rapidly visible artist associated with post-digital abstraction and platform-based collector communities.":
-    "Elias Venn 是一位迅速获得可见度的艺术家，与后数字抽象和平台化藏家社群相关。",
+    "Elias Venn 是一位近期迅速受到关注的艺术家，其作品与后数字抽象和平台化藏家社群有关。",
   "Recent inclusion in two commercial group shows and a digital art fair presentation.":
-    "近期入选两次商业群展和一次数字艺术博览会展示。",
+    "近期参加过两次商业群展，并在一次数字艺术博览会中展示。",
   "No long-term gallery representation. Sales are mainly handled through limited drops and online intermediaries.":
-    "没有长期画廊代理，销售主要通过限量发布和线上中介完成。",
+    "目前没有长期合作画廊，销售主要通过限量发售和线上中介完成。",
   "Four auction appearances in the past year. Prices increased from £9,000 to £31,000 within ten months.":
-    "过去一年中出现四次拍卖记录，价格在十个月内从 9,000 英镑升至 31,000 英镑。",
+    "过去一年中有四次拍卖记录，价格在十个月内从 9,000 英镑上升至 31,000 英镑。",
   "Comparable works are difficult to verify because several sales occurred through private online channels.":
     "可比作品难以核实，因为部分销售通过私人线上渠道完成。",
   "Direct purchase from a limited online release. Certificate supplied by the artist's studio.":
-    "通过限量线上发布直接购买，并由艺术家工作室提供证书。",
+    "通过限量线上发售直接购得，并由艺术家工作室提供证书。",
   "New work in excellent physical condition, but long-term conservation of resin and digital print materials is uncertain.":
-    "新作物理品相极佳，但树脂和数字打印材料的长期保存情况不确定。",
+    "作品较新，物理品相极佳，但树脂和数字打印材料的长期保存稳定性仍不确定。",
   "High online attention and collector discussion, but limited independent critical or institutional recognition.":
-    "线上关注度和藏家讨论度较高，但独立评论和机构认可有限。",
+    "线上关注度和藏家讨论度较高，但独立评论和机构认可仍然有限。",
   "Rapid price acceleration suggests momentum but may also indicate speculative hype.":
-    "价格快速上涨显示市场动能，但也可能意味着投机性炒作。",
+    "价格快速上涨显示出市场动能，但也可能反映投机性炒作。",
   "Key risks include short market history, weak institutional validation, uncertain resale depth and media conservation uncertainty.":
-    "主要风险包括市场历史较短、机构验证较弱、转售深度不确定，以及媒介保存不确定性。",
+    "主要风险包括市场历史较短、机构验证较弱、转售深度不明确，以及媒介保存稳定性不确定。",
   "This case is momentum-heavy and evidence-light. AI filtering highlights hype risk, verification limits and the difference between social visibility and durable reputation.":
-    "该案例市场动能强但证据较弱。AI 过滤突出炒作风险、验证限制，以及社交可见度与持久声誉之间的区别。",
+    "该案例市场热度较高，但支撑证据相对不足。AI 过滤结果突出炒作风险、信息验证限制，以及社交可见度与长期声誉之间的区别。",
   "Recent prices rose quickly, but comparable sales are difficult to verify and the market history is very short.":
-    "近期价格快速上涨，但可比销售难以核实，市场历史也很短。",
+    "近期价格上涨很快，但可比销售难以核实，市场历史也较短。",
   "The artist has high online visibility but limited gallery stability and little institutional recognition.":
-    "该艺术家线上可见度高，但画廊稳定性有限，机构认可较少。",
+    "该艺术家线上可见度较高，但画廊支持不够稳定，机构认可也较少。",
   "The work is new and in good condition, but material longevity and certificate verification deserve attention.":
-    "该作品较新且品相良好，但材料寿命和证书核验值得关注。",
+    "该作品较新且品相良好，但材料耐久性和证书核验仍需关注。",
   "Major risks include hype-driven overvaluation, uncertain resale depth and weak independent validation.":
-    "主要风险包括炒作驱动的高估、转售深度不确定和独立验证较弱。",
+    "主要风险包括炒作推高估值、转售市场深度不确定，以及独立验证不足。",
   "Collector attention is strong online, but critical and institutional signals remain limited.":
-    "线上藏家关注较强，但评论和机构信号仍然有限。",
+    "线上藏家关注度较高，但评论界和机构层面的信号仍然有限。",
   "The work aligns with post-digital abstraction, but cultural significance is not yet established.":
-    "该作品符合后数字抽象方向，但文化意义尚未建立。"
+    "该作品符合后数字抽象的创作方向，但其文化意义尚未充分建立。"
 };
 
 function bilingual(text) {
@@ -797,6 +797,20 @@ function downloadJson() {
 function resetStudy() {
   window.location.reload();
 }
+
+function updateMoneyValidity(input) {
+  const value = Number(input.value);
+  if (input.value && value < 100) {
+    input.setCustomValidity("Amount must be at least £100. / 金额不能低于 100 英镑。");
+  } else {
+    input.setCustomValidity("");
+  }
+}
+
+$$('input[name="valuation"], input[name="wtp"]').forEach((input) => {
+  input.addEventListener("input", () => updateMoneyValidity(input));
+  input.addEventListener("invalid", () => updateMoneyValidity(input));
+});
 
 $("#consentCheck").addEventListener("change", (event) => {
   $("#startBtn").disabled = !event.target.checked;
