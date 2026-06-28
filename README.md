@@ -33,6 +33,11 @@ This folder contains a working browser-based experiment for the study:
 - Option-based knowledge-type questions with examples and prompts
 - CSV and JSON data export
 - Local SQLite database collection through `server.py`
+- Researcher exports:
+  - `responses.csv`
+  - `events.csv`
+  - `participant_assignments.csv`
+  - `stimuli.json`
 
 ## How To Run
 
@@ -54,10 +59,18 @@ When participants finish, their responses are saved into:
 experiment-data/responses.sqlite3
 ```
 
-You can download all artwork-task-level responses as CSV from:
+Each completed questionnaire is saved as a new database row. The app does not
+update or replace earlier rows, so many participants can complete the study and
+their submissions will be stored separately. Use `databaseRecordId` and
+`submissionUuid` in the exported files to identify each saved submission.
+
+You can download research data from:
 
 ```text
-http://127.0.0.1:8081/api/export.csv
+http://127.0.0.1:8081/api/responses.csv
+http://127.0.0.1:8081/api/events.csv
+http://127.0.0.1:8081/api/participant_assignments.csv
+http://127.0.0.1:8081/api/stimuli.json
 ```
 
 You can inspect all raw JSON records from:
@@ -72,6 +85,10 @@ If you open `index.html` directly with `file://`, the experiment still works,
 but it cannot write to the shared SQLite database. In that mode, data is saved in
 the participant's browser and can be downloaded at the end. For shared data
 collection, use `python3 server.py`.
+
+For multi-participant collection, keep the server running and share the server
+URL. Every participant's final submission is appended to
+`responses.sqlite3`; it is not stored by overwriting a fixed participant slot.
 
 ## Deploying on Render
 
@@ -110,6 +127,9 @@ falls back to port `8081`.
 
 SQLite is acceptable for prototype testing, but it is not ideal for long-term
 public data collection on Render unless you configure persistent storage.
+This app writes SQLite submissions in append-only mode, with one new database
+row for each completed questionnaire. It also enables SQLite WAL mode and a
+busy timeout to reduce write conflicts during pilot testing.
 
 By default, Render service filesystems are not a reliable place to keep research
 data permanently. A redeploy, instance replacement, or service restart can cause
@@ -152,7 +172,10 @@ When deployed, the app keeps the same API routes:
 ```text
 POST /api/submit       Save one participant submission
 GET  /api/responses    View all raw JSON records
-GET  /api/export.csv   Download all artwork-task-level responses as CSV
+GET  /api/responses.csv   Download all artwork-task-level responses
+GET  /api/events.csv      Download behavioural event logs
+GET  /api/participant_assignments.csv  Download participant condition assignments
+GET  /api/stimuli.json    Download stimulus metadata
 ```
 
 ## Recommended Pilot Checks

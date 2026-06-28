@@ -1,39 +1,58 @@
-variable,level,description
-participantId,participant,Automatically generated anonymous participant identifier
-assignment,participant,Counterbalancing assignment A or B
-experienceGroup,participant,Classified as experienced or non_experienced based on art-market role or years of experience
-artExperience,participant,Participant's art investment or art-market experience category
-yearsExperience,participant,Self-reported years of art-market experience
-investmentExperience,participant,General investment experience
-aiFamiliarity,participant,Self-reported familiarity with AI tools
-riskPreference,participant,Risk preference from 1 very cautious to 7 very risk-seeking
-artInterest,participant,Interest in art from 1 low to 7 high
-ageGroup,participant,Age band
-education,participant,Highest education category
-taskNumber,artwork-task,Order in which the artwork task was presented
-artworkId,artwork-task,Fictional artwork identifier
-artworkTitle,artwork-task,Fictional artwork title
-artist,artwork-task,Fictional artist name
-interface,artwork-task,Unfiltered information or AI-filtered knowledge interface
-valuation,artwork-task,Participant's reasonable market value judgment in GBP
-wtp,artwork-task,Participant's maximum willingness to pay in GBP
-risk,artwork-task,Perceived investment risk from 1 very low to 7 very high
-intention,artwork-task,Investment intention from 1 very unlikely to 7 very likely
-confidence,artwork-task,Decision confidence from 1 not confident to 7 very confident
-knowledgeQuality,artwork-task,Perceived knowledge quality from 1 very low to 7 very high
-informationOverload,artwork-task,Perceived information overload from 1 not overloaded to 7 very overloaded
-trustAI,artwork-task,Trust in AI-filtered knowledge from 1 do not trust to 7 trust completely; blank for unfiltered tasks
-taskTimeMs,behavioural,Milliseconds spent on each artwork task
-moduleStats,behavioural,JSON string recording AI module clicks and time spent in each opened module
-preferredInterface,reflection,Final preference among unfiltered interface AI-filtered interface or depends
-aiSuitableTypes,reflection,Selected knowledge types suitable for AI filtering; multiple selections separated by |
-aiSuitableNote,reflection,Optional open-ended note about knowledge types suitable for AI filtering
-humanExpertiseTypes,reflection,Selected knowledge types requiring human expertise; multiple selections separated by |
-humanExpertiseNote,reflection,Optional open-ended note about knowledge types requiring human expertise
-realUse,reflection,Open-ended response about whether the participant would use this AI tool in real decisions
-aiMarket,reflection,Suitability of AI filtering for market records and comparable sales from 1 to 7
-aiArtist,reflection,Suitability of AI filtering for artist background and reputation from 1 to 7
-aiObject,reflection,Suitability of AI filtering for artwork-specific information from 1 to 7
-aiRisk,reflection,Suitability of AI filtering for risk signals from 1 to 7
-aiExpert,reflection,Suitability of AI filtering for expert and institutional signals from 1 to 7
-aiAesthetic,reflection,Suitability of AI filtering for aesthetic and cultural value from 1 to 7
+file,variable,level,description
+responses.csv,databaseRecordId,submission,Auto-increment database row ID; every finished questionnaire submission receives a new row and previous rows are not overwritten
+responses.csv,submissionUuid,submission,Unique submission UUID created for each participant session
+responses.csv,serverCreatedAt,submission,Server-side Unix timestamp when the submission was saved
+responses.csv,participantId,participant,Anonymous participant identifier
+responses.csv,conditionOrderGroup,participant,Counterbalancing group A or B
+responses.csv,experienceGroup,participant,Experienced or non_experienced classification based on art-market transaction experience
+responses.csv,completionStatus,participant,Whether participant completed the full experiment
+responses.csv,instructionTimeMs,participant,Time spent on instruction page in milliseconds
+responses.csv,artMarketTransactionExperience,participant,Whether participant has bought sold valued advised on or researched art-market transactions
+responses.csv,yearsExperience,participant,Years of art investment or art-market experience
+responses.csv,pricingFamiliarity,participant,Familiarity with art-market pricing
+responses.csv,artExpertise,participant,Art history curating criticism art education art research or artistic training background
+responses.csv,aiUseFrequency,participant,Frequency of AI tool use for research or decision-making
+responses.csv,taskNumber,artwork-task,Order of artwork task for participant
+responses.csv,artworkId,artwork-task,Fictional artwork ID
+responses.csv,interface,artwork-task,Unfiltered dossier or AI-filtered report
+responses.csv,valuation,artwork-task,Reasonable market value in GBP
+responses.csv,wtp,artwork-task,Maximum willingness to pay in GBP
+responses.csv,intention,artwork-task,Likelihood of investing from 1 to 7
+responses.csv,risk,artwork-task,Perceived investment risk from 1 to 7
+responses.csv,valuationConfidence,artwork-task,Confidence in valuation from 1 to 7
+responses.csv,investmentConfidence,artwork-task,Confidence artwork is worth investing in from 1 to 7
+responses.csv,judgementClarity,artwork-task,Clarity about why participant made judgement from 1 to 7
+responses.csv,infoValueUnderstanding,artwork-task,Information helped understand investment value from 1 to 7
+responses.csv,infoRelevant,artwork-task,Information was relevant from 1 to 7
+responses.csv,infoClear,artwork-task,Information was clear from 1 to 7
+responses.csv,infoGrounded,artwork-task,Information made judgement feel grounded from 1 to 7
+responses.csv,infoMainPoints,artwork-task,Information helped participant see what mattered most from 1 to 7
+responses.csv,tooMuchInfo,artwork-task,Too much information to process from 1 to 7
+responses.csv,effortMainPoints,artwork-task,Effort to find main points from 1 to 7
+responses.csv,hardTellImportance,artwork-task,Difficulty identifying important information from 1 to 7
+responses.csv,confusedAfterReading,artwork-task,Confusion after reading page from 1 to 7
+responses.csv,separatedImportance,artwork-task,Manipulation check: important and less important information separated
+responses.csv,explainedSignals,artwork-task,Manipulation check: why signals mattered was explained
+responses.csv,expertBoundaryClear,artwork-task,Manipulation check: human expert judgement boundary was clear
+responses.csv,aiUsefulHighlights,artwork-task,AI-only trust item: AI highlighted useful information
+responses.csv,aiNoImportantOmission,artwork-task,AI-only trust item: AI did not leave out important information
+responses.csv,aiRealReference,artwork-task,AI-only trust item: participant would use report as real decision reference
+responses.csv,aiSourceEnough,artwork-task,AI-only trust item: AI report showed enough sources
+responses.csv,taskTimeMs,behavioural,Time on artwork page and questionnaire in milliseconds
+responses.csv,questionnaireSubmitTimeMs,behavioural,Time to submit post-task questionnaire in milliseconds
+responses.csv,openedRiskModule,behavioural,Whether participant opened AI risk module
+responses.csv,openedSourceModule,behavioural,Whether participant opened AI source module
+responses.csv,openedExpertModule,behavioural,Whether participant opened AI expert judgement module
+responses.csv,moduleStats,behavioural,JSON string of AI module clicks and open time
+events.csv,eventType,event,screen_view artwork_page_start module_expand module_collapse post_task_submit experiment_complete
+events.csv,databaseRecordId,submission,Database row ID linking event logs to one saved submission
+events.csv,submissionUuid,submission,Submission UUID linking event logs to one saved submission
+events.csv,timestamp,event,Event timestamp
+events.csv,screen,event,Screen name for screen_view events
+events.csv,moduleName,event,AI module name for module events
+participant_assignments.csv,databaseRecordId,submission,Database row ID linking assignment data to one saved submission
+participant_assignments.csv,submissionUuid,submission,Submission UUID linking assignment data to one saved submission
+participant_assignments.csv,serverCreatedAt,submission,Server-side Unix timestamp when the submission was saved
+participant_assignments.csv,taskOrder,participant,JSON list of artwork-interface pairings assigned to participant
+stimuli.json,artworks,stimulus,Fictional artwork metadata and synthetic image references
+stimuli.json,ai_report_modules,stimulus,Eight AI report module names used in the AI-filtered condition

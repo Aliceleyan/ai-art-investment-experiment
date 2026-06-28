@@ -38,13 +38,11 @@
           <p class="eyebrow">Step 1</p>
           <h2>Participant Consent / 参与同意</h2>
           <p>
-            You are invited to take part in a study about how different information
-            interfaces influence art investment decision-making. You will evaluate
-            four fictional artwork investment opportunities. Some pages show
-            conventional artwork information, while others show information organised
-            through an AI-enabled knowledge filtering interface.
+            You will review four fictional artwork investment cases. Each case gives
+            you information that an investor might consider before deciding whether
+            an artwork is worth buying.
             <br /><br />
-            您将参加一项关于不同信息界面如何影响艺术品投资决策的研究。您需要评估四个虚构艺术品投资案例；部分页面展示传统艺术品资料，部分页面展示由 AI 知识过滤界面组织的信息。
+            您将阅读四个虚构艺术品投资案例。每个案例都会提供投资者在判断一件艺术品是否值得购买前可能会考虑的信息。
           </p>
           <div class="notice">
             <strong>Participant role / 参与者角色：</strong> Please answer as someone who is
@@ -52,15 +50,17 @@
             You do not need to be a professional art investor, but please imagine that
             you are evaluating each artwork as a potential investment opportunity.
             <br />
-            请以“对艺术品感兴趣，并愿意考虑用资金投资艺术品”的身份作答。您不需要是专业艺术品投资者，但请想象自己正在评估每件艺术品是否具有投资价值。
+            请以“对艺术品感兴趣，并愿意考虑用资金投资艺术品”的身份作答。您不需要是专业艺术品投资者，但请想象自己正在评估每件艺术品是否值得购买。
           </div>
           <div class="notice">
-            <strong>Important / 重要说明：</strong> The AI interface does not provide investment
-            advice, a final buy/sell recommendation, or a single correct price. It
-            only organises and interprets decision-relevant knowledge for research
-            purposes.
+            <strong>Important / 重要说明：</strong> Some pages show the information as a regular
+            artwork dossier. Other pages show the same information after an AI tool
+            has organised it. The AI does not tell you whether to buy the artwork,
+            and it does not give one correct price. It only helps identify which
+            information may matter most, which information may be less important,
+            and which points may still need expert judgement.
             <br />
-            AI 界面不会提供投资建议、最终买卖推荐或唯一正确价格；它仅用于组织和解释与决策相关的知识。
+            有些页面会以普通艺术品资料的方式展示信息；另一些页面会展示同样的信息，但经过 AI 工具整理。AI 不会告诉您是否应该购买，也不会给出唯一正确价格。它只帮助指出哪些信息可能更重要、哪些信息可能相对次要，以及哪些地方仍需要专家判断。
           </div>
           <label class="check-row">
             <input id="consentCheck" type="checkbox" />
@@ -76,22 +76,36 @@
           <h2>Background Questionnaire / 背景问卷</h2>
           <form id="backgroundForm" class="form-grid">
             <label>
-              Art investment / market experience / 艺术品投资或艺术市场经验
-              <select name="artExperience" required>
+              Have you ever bought, sold, valued, advised on, or researched art-market transactions? For example, buying at a gallery, selling at auction, advising a collector, or researching sale prices. / 您是否曾购买、出售、估值、建议或研究过艺术市场交易？例如，在画廊购买、通过拍卖出售、为藏家提供建议，或研究成交价格。
+              <select name="artMarketTransactionExperience" required>
                 <option value="">Select one / 请选择</option>
-                <option value="none">No specialised experience / 无专业经验</option>
-                <option value="collector">Collector or art investor / 收藏家或艺术品投资者</option>
-                <option value="advisor">Art advisor / consultant / 艺术顾问</option>
-                <option value="gallery">Gallery / auction / art-market professional / 画廊、拍卖或艺术市场从业者</option>
-                <option value="research">Art researcher / curator / critic / 艺术研究者、策展人或评论者</option>
+                <option value="yes">Yes / 是</option>
+                <option value="no">No / 否</option>
               </select>
             </label>
             <label>
-              Years of art-market experience / 艺术市场经验年数
+              Years of art investment or art-market experience, including collecting, gallery work, auction work, advising, valuation, or market research. / 艺术品投资或艺术市场经验年数，包括收藏、画廊工作、拍卖工作、艺术顾问、估值或市场研究。
               <input name="yearsExperience" type="number" min="0" max="60" required />
             </label>
             <label>
-              General investment experience / 一般投资经验
+              Familiarity with art-market pricing, such as estimates, comparable sales, auction results, or gallery prices. / 对艺术市场定价的熟悉程度，例如估价、可比销售、拍卖结果或画廊价格。
+              <select name="pricingFamiliarity" required>
+                <option value="">Select one / 请选择</option>
+                <option value="low">Low / 低</option>
+                <option value="moderate">Moderate / 中等</option>
+                <option value="high">High / 高</option>
+              </select>
+            </label>
+            <label>
+              Do you have art history, curating, criticism, art education, art research or artistic training? For example, art degree, curatorial work, art writing, or studio training. / 您是否有艺术史、策展、评论、艺术教育、艺术研究或艺术创作训练背景？例如艺术学位、策展工作、艺术写作或创作训练。
+              <select name="artExpertise" required>
+                <option value="">Select one / 请选择</option>
+                <option value="yes">Yes / 是</option>
+                <option value="no">No / 否</option>
+              </select>
+            </label>
+            <label>
+              General investment experience, such as stocks, funds, property, crypto, collectibles, or other assets. / 一般投资经验，例如股票、基金、房地产、加密资产、收藏品或其他资产。
               <select name="investmentExperience" required>
                 <option value="">Select one / 请选择</option>
                 <option value="none">None / 无</option>
@@ -101,7 +115,7 @@
               </select>
             </label>
             <label>
-              Familiarity with AI tools / 对 AI 工具的熟悉程度
+              Familiarity with AI tools, such as ChatGPT, image generation tools, AI search, or AI research assistants. / 对 AI 工具的熟悉程度，例如 ChatGPT、图像生成工具、AI 搜索或 AI 研究助手。
               <select name="aiFamiliarity" required>
                 <option value="">Select one / 请选择</option>
                 <option value="low">Low / 低</option>
@@ -110,13 +124,29 @@
               </select>
             </label>
             <label>
-              Risk preference / 风险偏好
+              How often do you use AI tools for research or decision-making? For example, summarising information, comparing options, or preparing decisions. / 您使用 AI 工具进行研究或决策的频率如何？例如总结信息、比较选项或辅助决策。
+              <select name="aiUseFrequency" required>
+                <option value="">Select one / 请选择</option>
+                <option value="never">Never / 从不</option>
+                <option value="rarely">Rarely / 很少</option>
+                <option value="sometimes">Sometimes / 有时</option>
+                <option value="often">Often / 经常</option>
+                <option value="very_often">Very often / 非常频繁</option>
+              </select>
+            </label>
+            <label>
+              Risk preference, for example whether you usually prefer safer choices or are comfortable with uncertainty. / 风险偏好，例如您通常更偏好稳妥选择，还是能接受较高不确定性。
               <input name="riskPreference" type="range" min="1" max="7" value="4" />
               <span class="range-label">1 = very cautious / 非常谨慎, 7 = very risk-seeking / 非常愿意冒险</span>
             </label>
             <label>
-              Interest in art / 对艺术的兴趣
+              Interest in art, such as visiting exhibitions, following artists, collecting, reading art news, or viewing artworks online. / 对艺术的兴趣，例如看展、关注艺术家、收藏、阅读艺术新闻或线上浏览作品。
               <input name="artInterest" type="range" min="1" max="7" value="4" />
+              <span class="range-label">1 = low interest / 兴趣较低, 7 = high interest / 兴趣很高</span>
+            </label>
+            <label>
+              Interest in contemporary art investment cases similar to these fictional works, such as emerging or mid-career artists, gallery works, auction records, and resale risk. / 对类似本实验虚构作品的当代艺术投资案例的兴趣，例如新兴或中生代艺术家、画廊作品、拍卖记录和转售风险。
+              <input name="categoryInterest" type="range" min="1" max="7" value="4" />
               <span class="range-label">1 = low interest / 兴趣较低, 7 = high interest / 兴趣很高</span>
             </label>
             <label>
@@ -155,8 +185,16 @@
             worth investing in. Review the information shown on each page and then
             answer the investment judgment questions.
             <br /><br />
-            请把自己代入为一位对艺术品感兴趣、并愿意考虑艺术品投资的人。请想象您正在评估每件虚构艺术品是否值得投资，阅读页面信息后再回答投资判断问题。
+            请把自己代入为一位对艺术品感兴趣、并愿意考虑艺术品投资的人。请仔细阅读每个案例，并根据自己的判断作答。
           </p>
+          <div class="notice">
+            <strong>Task structure / 任务结构：</strong> You will evaluate exactly four fictional
+            artworks: two regular dossier pages and two AI-organised report pages.
+            The order is random, so you may see two pages of the same type in a row,
+            but the full experiment always contains two of each type.
+            <br />
+            您将一共评估四件虚构艺术品：其中两件以普通资料页呈现，两件以 AI 整理报告页呈现。页面顺序是随机的，所以可能连续看到同一种页面，但完整实验一定是“两件普通资料页 + 两件 AI 整理报告页”。
+          </div>
           <div class="instruction-grid">
             <div>
               <h3>Unfiltered information / 未过滤信息</h3>
@@ -179,6 +217,7 @@
               <p class="eyebrow" id="taskCount">Task</p>
               <h2 id="artworkTitle">Artwork title</h2>
               <p class="muted" id="interfaceBadge">Interface</p>
+              <p class="balance-note" id="conditionBalance">Four cases total: 2 regular dossier + 2 AI report.</p>
             </div>
             <div class="timer" aria-live="polite">
               <span>Time on task / 作答时间</span>
@@ -221,7 +260,7 @@
           <h2>Final Reflection / 最终反馈</h2>
           <form id="reflectionForm" class="reflection-form">
             <label>
-              Which interface did you find more useful? / 您认为哪种界面更有用？
+              Which page type helped you make a judgement more easily? For example, which page made it easier to compare value, risk, and key evidence? / 哪种页面类型更容易帮助您作出判断？例如，哪种页面让您更容易比较价值、风险和关键证据？
               <select name="preferredInterface" required>
                 <option value="">Select one / 请选择</option>
                 <option value="unfiltered">Unfiltered information / 未过滤信息</option>
@@ -229,26 +268,35 @@
                 <option value="depends">It depends on the artwork / 取决于艺术品案例</option>
               </select>
             </label>
+            <label>
+              Which page type felt more trustworthy? For example, which page made the information feel more reliable, balanced, and checkable? / 哪种页面类型让您感觉更可信？例如，哪种页面让信息显得更可靠、更平衡、更容易核查？
+              <select name="trustedInterface" required>
+                <option value="">Select one / 请选择</option>
+                <option value="unfiltered">Unfiltered information / 普通资料页</option>
+                <option value="ai_filtered">AI organised report / AI 整理报告页</option>
+                <option value="depends">It depends on the artwork / 取决于艺术品案例</option>
+              </select>
+            </label>
             <fieldset class="choice-panel">
               <legend>Which knowledge types is AI most suitable for filtering? / 您认为 AI 最适合过滤哪些知识类型？</legend>
-              <p class="hint">You may select multiple options. / 可多选。</p>
+              <p class="hint">You may select multiple options. For example, AI may be useful for comparing prices or summarising risk signals. / 可多选。例如，AI 可能适合比较价格或总结风险信号。</p>
               <div id="aiSuitableChoices" class="knowledge-choice-grid"></div>
               <label>
-                Optional note / 可选补充
+                Optional note, for example why you selected these knowledge types / 可选补充，例如您为什么选择这些知识类型
                 <textarea name="aiSuitableNote" rows="2"></textarea>
               </label>
             </fieldset>
             <fieldset class="choice-panel">
               <legend>Which knowledge types should remain dependent on human expertise? / 哪些知识类型仍应主要依赖人类专家判断？</legend>
-              <p class="hint">You may select multiple options. / 可多选。</p>
+              <p class="hint">You may select multiple options. For example, authenticity, condition, cultural meaning, or taste-sensitive judgement may need experts. / 可多选。例如，真伪、品相、文化意义或审美判断可能需要专家。</p>
               <div id="humanExpertiseChoices" class="knowledge-choice-grid"></div>
               <label>
-                Optional note / 可选补充
+                Optional note, for example why these areas need human judgement / 可选补充，例如为什么这些方面需要人类判断
                 <textarea name="humanExpertiseNote" rows="2"></textarea>
               </label>
             </fieldset>
             <label>
-              Would you use this kind of AI tool in real art investment decisions? / 如果是真实艺术品投资决策，您是否会使用这种 AI 工具？
+              Would you use this kind of AI tool in real art investment decisions? For example, would you use it before speaking with an advisor, gallery, or auction specialist? / 如果是真实艺术品投资决策，您是否会使用这种 AI 工具？例如，您是否会在咨询艺术顾问、画廊或拍卖专家前使用它？
               <textarea name="realUse" rows="3" required></textarea>
             </label>
             <div class="suitability-panel">
@@ -276,6 +324,13 @@
             <button class="primary" id="downloadCsv">Download CSV / 下载 CSV</button>
             <button class="secondary" id="downloadJson">Download JSON / 下载 JSON</button>
             <button class="secondary" id="resetStudy">Reset study / 重置实验</button>
+          </div>
+          <div class="admin-export">
+            <h3>Researcher database exports / 研究者数据库导出</h3>
+            <a href="/api/responses.csv">responses.csv</a>
+            <a href="/api/events.csv">events.csv</a>
+            <a href="/api/participant_assignments.csv">participant_assignments.csv</a>
+            <a href="/api/stimuli.json">stimuli.json</a>
           </div>
           <pre id="summaryBox" class="summary-box"></pre>
         </section>

@@ -1,0 +1,65 @@
+{
+  "study": "AI-Enabled Knowledge Filtering in Art Investment Decision-Making",
+  "design": {
+    "within_subject_factor": "information_interface",
+    "interfaces": ["unfiltered", "ai_filtered"],
+    "between_subject_measured_moderator": "art_investment_or_market_experience",
+    "tasks_per_participant": 4,
+    "counterbalancing": {
+      "A": ["unfiltered", "ai_filtered", "ai_filtered", "unfiltered"],
+      "B": ["ai_filtered", "unfiltered", "unfiltered", "ai_filtered"]
+    }
+  },
+  "artworks": [
+    {
+      "artworkId": "A01",
+      "artist": "Mara Ellison",
+      "title": "Chromatic Index",
+      "year": "2021",
+      "medium": "Acrylic and pigment on linen",
+      "size": "90 x 70 cm",
+      "image": "assets/artwork-01.svg",
+      "profile": "Emerging artist with growing social visibility but limited auction history."
+    },
+    {
+      "artworkId": "A02",
+      "artist": "Theo Ramirez",
+      "title": "Quiet Ledger",
+      "year": "2017",
+      "medium": "Oil, wax and graphite on panel",
+      "size": "65 x 85 cm",
+      "image": "assets/artwork-02.svg",
+      "profile": "Mid-career artist with stable representation and moderate market growth."
+    },
+    {
+      "artworkId": "A03",
+      "artist": "Lina Okafor",
+      "title": "Archive of Rain",
+      "year": "2012",
+      "medium": "Mixed media textile and ink",
+      "size": "120 x 95 cm",
+      "image": "assets/artwork-03.svg",
+      "profile": "Established artist with strong institutional signals but low liquidity."
+    },
+    {
+      "artworkId": "A04",
+      "artist": "Elias Venn",
+      "title": "Signal Bloom",
+      "year": "2024",
+      "medium": "Digital print, resin and aluminium",
+      "size": "100 x 100 cm",
+      "image": "assets/artwork-04.svg",
+      "profile": "Speculative artist with rapid price attention and potential hype risk."
+    }
+  ],
+  "ai_report_modules": [
+    "Most important signals",
+    "Market evidence",
+    "Artist trajectory",
+    "Risk signals",
+    "Aesthetic and cultural interpretation",
+    "Needs human expert judgement",
+    "Lower-priority information",
+    "Source and reasoning notes"
+  ]
+}

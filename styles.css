@@ -171,6 +171,17 @@ button:disabled {
   color: var(--muted);
 }
 
+.balance-note {
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  margin: 10px 0 0;
+  padding: 9px 11px;
+}
+
 .session-card .muted {
   color: #b8c2d2;
   font-size: 13px;
@@ -513,6 +524,10 @@ input[type="range"] {
   background: #1b7a83;
 }
 
+.module-icon.gray {
+  background: #64748b;
+}
+
 .priority-dot {
   align-self: start;
   border-radius: 999px;
@@ -572,6 +587,25 @@ input[type="range"] {
 .priority.low {
   background: var(--green-soft);
   color: var(--green);
+}
+
+.module-points {
+  display: grid;
+  gap: 10px;
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+
+.source-tag {
+  background: #eef2f7;
+  border: 1px solid #d8dee8;
+  border-radius: 999px;
+  color: #334155;
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 900;
+  margin-left: 6px;
+  padding: 2px 7px;
 }
 
 .task-form {
@@ -696,6 +730,32 @@ input[type="range"] {
   flex-wrap: wrap;
   gap: 12px;
   margin: 22px 0;
+}
+
+.admin-export {
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 14px;
+}
+
+.admin-export h3 {
+  flex-basis: 100%;
+  margin: 0 0 4px;
+}
+
+.admin-export a {
+  background: #fff;
+  border: 1px solid #d8dee8;
+  border-radius: 7px;
+  color: var(--blue);
+  font-weight: 800;
+  padding: 8px 10px;
+  text-decoration: none;
 }
 
 .summary-box {

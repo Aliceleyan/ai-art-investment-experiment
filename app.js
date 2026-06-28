@@ -182,22 +182,45 @@ const artworks = [
 ];
 
 const scales = [
-  ["risk", "How risky do you think this artwork is as an investment? / 您认为这件艺术品作为投资的风险有多高？", "Very low risk / 风险很低", "Very high risk / 风险很高"],
-  ["intention", "How likely would you be to invest in this artwork? / 您投资这件艺术品的可能性有多高？", "Very unlikely / 非常不可能", "Very likely / 非常可能"],
-  ["confidence", "How confident are you in your investment judgment? / 您对自己的投资判断有多大信心？", "Not confident at all / 完全没有信心", "Very confident / 非常有信心"],
-  ["knowledgeQuality", "How would you rate the quality of the information or knowledge provided? / 您如何评价所提供信息或知识的质量？", "Very low quality / 质量很低", "Very high quality / 质量很高"],
-  ["informationOverload", "To what extent did you feel overloaded by the amount or complexity of information? / 您在多大程度上感到信息数量或复杂度造成负担？", "Not overloaded / 没有负担", "Very overloaded / 负担很重"]
+  ["intention", "How likely would you be to invest in this artwork? For example, would you seriously consider buying it if you had the budget? / 您投资这件艺术品的可能性有多高？例如，如果预算允许，您是否会认真考虑购买？", "Very unlikely / 非常不可能", "Very likely / 非常可能"],
+  ["risk", "How risky do you think this artwork is as an investment? For example, consider resale difficulty, price uncertainty, authenticity or condition issues. / 您认为这件艺术品作为投资的风险有多高？例如，请考虑转售难度、价格不确定性、真伪或品相问题。", "Very low risk / 风险很低", "Very high risk / 风险很高"],
+  ["valuationConfidence", "How confident are you in your valuation? For example, do you feel your price estimate is well supported by the information? / 您对自己的估值有多大信心？例如，您是否觉得自己的价格判断有足够信息支持？", "Not confident / 没有信心", "Very confident / 非常有信心"],
+  ["investmentConfidence", "How confident are you about whether this artwork is worth investing in? For example, do you feel clear about whether it is attractive or too risky? / 您对这件作品是否值得投资的判断有多大信心？例如，您是否清楚它具有吸引力，还是风险过高？", "Not confident / 没有信心", "Very confident / 非常有信心"],
+  ["judgementClarity", "I am clear about why I made my judgement. For example, I can point to the main reasons behind my decision. / 我清楚自己为什么作出这个判断。例如，我能说出支持我判断的主要原因。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"],
+  ["infoValueUnderstanding", "The information helped me understand the investment value of this artwork. For example, it helped me think about price level, demand, rarity, or future resale. / 这些信息帮助我理解这件艺术品的投资价值。例如，它帮助我思考价格水平、市场需求、稀缺性或未来转售。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"],
+  ["infoRelevant", "The information was relevant to my judgement. For example, it related to value, risk, market interest, provenance, condition, or artist reputation. / 这些信息与我的判断相关。例如，它涉及价值、风险、市场兴趣、来源、品相或艺术家声誉。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"],
+  ["infoClear", "The information was clear. For example, I could understand the main facts without needing to reread many times. / 这些信息清楚易懂。例如，我不需要反复阅读很多遍也能理解主要事实。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"],
+  ["infoGrounded", "The information made my judgement feel more grounded. For example, my decision felt based on evidence rather than guessing. / 这些信息让我觉得自己的判断更有依据。例如，我的决定更像是基于证据，而不是凭感觉猜测。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"],
+  ["infoMainPoints", "The information helped me see what mattered most. For example, it made price evidence, risk, reputation, or expert judgement stand out. / 这些信息帮助我看出哪些内容最重要。例如，它让我更容易看到价格证据、风险、声誉或专家判断等重点。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"],
+  ["tooMuchInfo", "There was too much information to process. For example, I felt there were too many details to consider at once. / 需要处理的信息太多。例如，我觉得一次要考虑的细节太多。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"],
+  ["effortMainPoints", "It took a lot of effort to find the main points. For example, I had to search carefully to identify what mattered most. / 找出重点需要花很多精力。例如，我需要很仔细地寻找，才能判断哪些内容最重要。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"],
+  ["hardTellImportance", "It was hard to tell which information mattered most. For example, I was unsure whether to focus on price, artist reputation, condition, or risk. / 很难判断哪些信息最重要。例如，我不确定应该重点看价格、艺术家声誉、品相还是风险。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"],
+  ["confusedAfterReading", "I felt a bit confused after reading the page. For example, I was not sure how to connect the different pieces of information. / 阅读页面后我有些困惑。例如，我不太确定如何把不同信息联系起来。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"],
+  ["separatedImportance", "This page separated important and less important information. For example, it made clear which points were central and which were only background details. / 这个页面区分了重要和相对不重要的信息。例如，它让我看出哪些是核心信息，哪些只是背景细节。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"],
+  ["explainedSignals", "This page helped me understand why certain pieces of information mattered for the investment decision, such as price history, exhibition record, condition, or resale risk. / 这个页面帮助我理解为什么某些信息会影响投资判断，例如价格历史、展览记录、品相或转售风险。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"],
+  ["expertBoundaryClear", "This page made it clear which points still needed human expert judgement. For example, authenticity, physical condition, restoration, or cultural meaning may need specialist review. / 这个页面说明了哪些地方仍需要人类专家判断。例如，真伪、实物品相、修复情况或文化意义可能需要专家进一步判断。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"]
 ];
 
-const trustScale = ["trustAI", "To what extent do you trust the AI-filtered knowledge presented in this case? / 您在多大程度上信任本案例中的 AI 过滤知识？", "Do not trust at all / 完全不信任", "Trust completely / 完全信任"];
+const aiTrustScales = [
+  ["aiUsefulHighlights", "I believe the AI highlighted useful information. For example, it drew attention to evidence or risks that were helpful for my decision. / 我认为 AI 标出了有用的信息。例如，它提示了对我判断有帮助的证据或风险。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"],
+  ["aiNoImportantOmission", "I believe the AI report included the key information I needed and did not leave out anything that would seriously change my judgement, such as major risks, price evidence, provenance, or condition issues. / 我认为 AI 报告包含了我需要的关键信息，没有遗漏会严重改变我判断的重要内容，例如重大风险、价格证据、来源记录或品相问题。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"],
+  ["aiRealReference", "I would use this AI report as one reference in a real investment decision. For example, I might compare it with advice from an art advisor, gallery, or auction specialist. / 在真实投资决策中，我会把这份 AI 报告作为参考之一。例如，我可能会把它与艺术顾问、画廊或拍卖专家的意见进行比较。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"],
+  ["aiSourceEnough", "The AI report showed enough sources for me to judge whether it was reliable. For example, I could see whether a claim came from comparable sales, exhibition history, condition notes, or provenance. / AI 报告提供了足够来源，让我判断其是否可靠。例如，我能看出某个判断来自可比销售、展览历史、品相说明还是来源记录。", "Strongly disagree / 非常不同意", "Strongly agree / 非常同意"]
+];
 
 const aiSuitabilityScales = [
-  ["aiMarket", "Suitability of AI filtering: market records and comparable sales / AI 过滤市场记录和可比销售的适配度"],
-  ["aiArtist", "Suitability of AI filtering: artist background and reputation / AI 过滤艺术家背景和声誉的适配度"],
-  ["aiObject", "Suitability of AI filtering: artwork-specific information / AI 过滤作品自身信息的适配度"],
-  ["aiRisk", "Suitability of AI filtering: risk signals / AI 过滤风险信号的适配度"],
-  ["aiExpert", "Suitability of AI filtering: expert and institutional signals / AI 过滤专家与机构信号的适配度"],
-  ["aiAesthetic", "Suitability of AI filtering: aesthetic and cultural value / AI 过滤审美与文化价值的适配度"]
+  ["aiPastPrices", "Past transaction prices, such as previous sale prices or price ranges. / 过往交易价格，例如以往成交价或价格区间。"],
+  ["aiComparableSales", "Comparable sales, such as prices of similar works by the same or similar artists. / 可比销售，例如同一艺术家或相似艺术家类似作品的价格。"],
+  ["aiArtistTrend", "Artist market trend, such as whether demand or prices seem to be rising or cooling. / 艺术家市场趋势，例如需求或价格似乎在上升还是降温。"],
+  ["aiAuctionRecords", "Auction or platform records, such as sale frequency, bought-in records, or online platform results. / 拍卖或平台记录，例如销售频率、流拍记录或线上平台结果。"],
+  ["aiProvenance", "Provenance and ownership records, such as gallery invoices, previous owners, or exhibition loans. / 来源与所有权记录，例如画廊发票、过往藏家或展览借展记录。"],
+  ["aiConditionRisk", "Condition and authenticity risk signals, such as damage, restoration, certificate issues, or authenticity doubts. / 品相与真伪风险信号，例如损伤、修复、证书问题或真伪疑点。"],
+  ["aiCareer", "Artist background and career trajectory, such as career stage, gallery support, exhibitions, or collections. / 艺术家背景与职业发展，例如职业阶段、画廊支持、展览或收藏情况。"],
+  ["aiVisibility", "Media and institutional visibility, such as critic reviews, museum attention, gallery endorsement, or collector discussion. / 媒体与机构可见度，例如评论文章、博物馆关注、画廊背书或藏家讨论。"],
+  ["aiVisualQuality", "Visual quality, such as composition, coherence, material execution, or visual distinctiveness. / 视觉质量，例如构图、一致性、材料处理或视觉辨识度。"],
+  ["aiArtHistorical", "Art-historical significance, such as whether the work relates to an important movement, period, or art-historical conversation. / 艺术史意义，例如作品是否关联重要流派、时期或艺术史讨论。"],
+  ["aiCulturalMeaning", "Cultural or symbolic meaning, such as social themes, identity, memory, migration, or symbolic value. / 文化或象征意义，例如社会主题、身份、记忆、迁移或象征价值。"],
+  ["aiFutureValue", "Future collecting value, such as whether the work may remain desirable to collectors over time. / 未来收藏价值，例如作品未来是否可能持续受到藏家关注。"]
 ];
 
 const knowledgeTypes = [
@@ -277,12 +300,38 @@ const rawKnowledgeLabels = {
 };
 
 const moduleLabels = {
-  "Market knowledge": knowledgeTypes[0],
-  "Artist reputation knowledge": knowledgeTypes[1],
-  "Object-specific knowledge": knowledgeTypes[2],
-  "Risk knowledge": knowledgeTypes[3],
-  "Social and expert signal knowledge": knowledgeTypes[4],
-  "Aesthetic and cultural knowledge": knowledgeTypes[5]
+  important: {
+    label: "Most important signals / 最重要信号",
+    hint: "Selected points that appear most relevant for this investment judgement. / 从全部资料中筛选出的、对本次投资判断最相关的信息。"
+  },
+  market: {
+    label: "Market evidence / 市场证据",
+    hint: "Comparable sales, price range, sales frequency, liquidity and recent market trend. / 可比销售、价格区间、销售频率、流动性和近期市场趋势。"
+  },
+  artist: {
+    label: "Artist trajectory / 艺术家发展轨迹",
+    hint: "Career stage, exhibition record, representation, institutional signals and visibility. / 职业阶段、展览记录、代理情况、机构信号和可见度。"
+  },
+  risk: {
+    label: "Risk signals / 风险信号",
+    hint: "Signals that may increase uncertainty, such as thin markets, hype, condition issues or provenance gaps. / 可能增加不确定性的信号，例如市场较薄、炒作、品相问题或来源缺口。"
+  },
+  aesthetic: {
+    label: "Aesthetic and cultural interpretation / 审美与文化解释",
+    hint: "A restrained interpretation of visual coherence, cultural meaning and art-historical relevance. / 对视觉一致性、文化意义和艺术史相关性的谨慎解释。"
+  },
+  expert: {
+    label: "Needs human expert judgement / 需要专家判断",
+    hint: "Points where AI should not be treated as a final authority. / AI 不应被视为最终权威、仍需要人类专家判断的部分。"
+  },
+  lower: {
+    label: "Lower-priority information / 较低优先级信息",
+    hint: "Details that may be interesting but appear less central to the current investment judgement. / 可能有趣、但对当前投资判断相对不那么核心的信息。"
+  },
+  source: {
+    label: "Source and reasoning notes / 来源与推理说明",
+    hint: "Short labels showing which source each major claim comes from. / 用简短标签说明主要判断来自哪些资料。"
+  }
 };
 
 const priorityLabels = {
@@ -292,12 +341,14 @@ const priorityLabels = {
 };
 
 const moduleVisuals = {
-  "Market knowledge": { code: "MK", color: "blue" },
-  "Artist reputation knowledge": { code: "AR", color: "green" },
-  "Object-specific knowledge": { code: "OS", color: "gold" },
-  "Risk knowledge": { code: "RK", color: "red" },
-  "Social and expert signal knowledge": { code: "SE", color: "purple" },
-  "Aesthetic and cultural knowledge": { code: "AC", color: "teal" }
+  important: { code: "★", color: "blue" },
+  market: { code: "£", color: "green" },
+  artist: { code: "AR", color: "purple" },
+  risk: { code: "!", color: "red" },
+  aesthetic: { code: "AC", color: "teal" },
+  expert: { code: "EX", color: "gold" },
+  lower: { code: "LP", color: "gray" },
+  source: { code: "SR", color: "blue" }
 };
 
 const textZh = {
@@ -449,23 +500,34 @@ function bilingual(text) {
 
 const state = {
   participantId: "",
+  submissionUuid: "",
   assignment: "",
   experienceGroup: "",
   background: {},
   taskOrder: [],
   taskIndex: 0,
   taskStart: null,
+  instructionStart: null,
+  instructionTimeMs: null,
   activeModuleStart: {},
   moduleStats: {},
+  events: [],
   responses: [],
-  reflection: {}
+  reflection: {},
+  completionStatus: "incomplete"
 };
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => Array.from(document.querySelectorAll(selector));
 
 function createParticipantId() {
-  return `P-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`;
+  if (crypto.randomUUID) return `P-${crypto.randomUUID()}`;
+  return `P-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2, 10).toUpperCase()}`;
+}
+
+function createSubmissionUuid() {
+  if (crypto.randomUUID) return crypto.randomUUID();
+  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 12)}`;
 }
 
 function shuffle(items) {
@@ -499,6 +561,19 @@ function showScreen(name) {
   $$("#progressSteps li").forEach((step) => {
     step.classList.toggle("active", step.dataset.step === name || (name === "tasks" && step.dataset.step === "tasks"));
   });
+  logEvent("screen_view", { screen: name });
+}
+
+function logEvent(eventType, details = {}) {
+  state.events.push({
+    participantId: state.participantId,
+    eventType,
+    timestamp: new Date().toISOString(),
+    taskNumber: state.taskIndex + 1,
+    artworkId: currentTask()?.artworkId || "",
+    interface: currentTask()?.interface || "",
+    ...details
+  });
 }
 
 function formToObject(form) {
@@ -519,8 +594,7 @@ function formToObject(form) {
 
 function classifyExperience(background) {
   const years = Number(background.yearsExperience || 0);
-  const roleExperienced = !["", "none"].includes(background.artExperience);
-  return roleExperienced || years >= 2 ? "experienced" : "non_experienced";
+  return background.artMarketTransactionExperience === "yes" || years >= 2 ? "experienced" : "non_experienced";
 }
 
 function renderScale([name, prompt, low, high]) {
@@ -559,6 +633,103 @@ function renderKnowledgeChoices(targetId, name) {
     .join("");
 }
 
+function moduleText(artwork, title) {
+  return artwork.ai.modules.find((module) => module[0] === title)?.[2] || "";
+}
+
+function sourceTag(label) {
+  return `<span class="source-tag">${label}</span>`;
+}
+
+function renderModulePoints(points) {
+  return `<ul class="module-points">${points.map((point) => `<li>${point}</li>`).join("")}</ul>`;
+}
+
+function buildFilteredModules(artwork) {
+  const market = moduleText(artwork, "Market knowledge");
+  const artist = moduleText(artwork, "Artist reputation knowledge");
+  const object = moduleText(artwork, "Object-specific knowledge");
+  const risk = moduleText(artwork, "Risk knowledge");
+  const social = moduleText(artwork, "Social and expert signal knowledge");
+  const aesthetic = moduleText(artwork, "Aesthetic and cultural knowledge");
+  return [
+    {
+      key: "important",
+      priority: "high",
+      html: renderModulePoints([
+        `${bilingual(market)} ${sourceTag("Comparable sales / 可比销售")}`,
+        `${bilingual(artist)} ${sourceTag("Exhibition history / 展览历史")}`,
+        `${bilingual(risk)} ${sourceTag("Risk note / 风险说明")}`,
+        `${bilingual(object)} ${sourceTag("Condition note / 品相说明")}`,
+        `${bilingual(social)} ${sourceTag("Critic or institutional signal / 评论或机构信号")}`
+      ])
+    },
+    {
+      key: "market",
+      priority: "high",
+      html: renderModulePoints([
+        `${bilingual(market)} ${sourceTag("Comparable sales / 可比销售")}`,
+        `${bilingual(artwork.raw["Market trend notes"])} ${sourceTag("Market trend / 市场趋势")}`,
+        `${bilingual(artwork.raw["Auction records"])} ${sourceTag("Auction record / 拍卖记录")}`
+      ])
+    },
+    {
+      key: "artist",
+      priority: "medium",
+      html: renderModulePoints([
+        `${bilingual(artist)} ${sourceTag("Artist profile / 艺术家资料")}`,
+        `${bilingual(artwork.raw["Exhibition history"])} ${sourceTag("Exhibition history / 展览历史")}`,
+        `${bilingual(artwork.raw["Gallery representation"])} ${sourceTag("Representation / 代理情况")}`
+      ])
+    },
+    {
+      key: "risk",
+      priority: "high",
+      html: renderModulePoints([
+        `${bilingual(risk)} ${sourceTag("Risk note / 风险说明")}`,
+        `${bilingual(artwork.raw["Condition notes"])} ${sourceTag("Condition note / 品相说明")}`,
+        `${bilingual(artwork.raw["Risk information"])} ${sourceTag("Risk information / 风险信息")}`
+      ])
+    },
+    {
+      key: "aesthetic",
+      priority: "medium",
+      html: renderModulePoints([
+        `${bilingual(aesthetic)} ${sourceTag("Visual interpretation / 视觉解释")}`,
+        "This judgement is interpretive and should not be treated as settled by market data alone.<br /><span class=\"zh-text\">这一判断具有解释性，不应仅凭市场数据视为定论。</span>"
+      ])
+    },
+    {
+      key: "expert",
+      priority: "high",
+      html: renderModulePoints([
+        `${bilingual(artwork.raw["Condition notes"])} ${sourceTag("Condition note / 品相说明")}`,
+        `${bilingual(artwork.raw.Provenance)} ${sourceTag("Provenance note / 来源记录")}`,
+        "Physical condition, authenticity, conservation details and cultural meaning should still be checked by human experts.<br /><span class=\"zh-text\">作品实物品相、真伪、保存细节和文化意义仍应由人类专家进一步判断。</span>"
+      ])
+    },
+    {
+      key: "lower",
+      priority: "low",
+      html: renderModulePoints([
+        "Some contextual details may be useful background but appear less central than market evidence, risk and expert-boundary issues for this task.<br /><span class=\"zh-text\">部分背景信息有助于理解作品，但在本次投资判断中，相比市场证据、风险和专家边界问题，重要性相对较低。</span>",
+        `${bilingual(artwork.raw["Signals and commentary"])} ${sourceTag("Commentary / 评论信号")}`
+      ])
+    },
+    {
+      key: "source",
+      priority: "medium",
+      html: renderModulePoints([
+        `${sourceTag("Comparable sales / 可比销售")} Price range and market reference. / 用于判断价格区间和市场参照。`,
+        `${sourceTag("Exhibition history / 展览历史")} Career and visibility signal. / 用于判断职业发展和可见度。`,
+        `${sourceTag("Condition note / 品相说明")} Object-level risk signal. / 用于判断作品层面的风险。`,
+        `${sourceTag("Provenance note / 来源记录")} Ownership and documentation signal. / 用于判断来源和文件支持。`,
+        `${sourceTag("Risk note / 风险说明")} Investment uncertainty signal. / 用于判断投资不确定性。`
+      ])
+    }
+  ];
+}
+
 function renderRawDossier(artwork, title = "") {
   const narrative = Object.entries(artwork.raw)
     .map(([blockTitle, text]) => {
@@ -582,12 +753,12 @@ function renderInterface(task, artwork) {
     return renderRawDossier(artwork);
   }
 
-  const modules = artwork.ai.modules
-    .map(([title, priority, text], index) => {
-      const meta = moduleLabels[title] || { label: title, hint: "" };
-      const visual = moduleVisuals[title] || { code: "KF", color: "blue" };
+  const modules = buildFilteredModules(artwork)
+    .map(({ key, priority, html }, index) => {
+      const meta = moduleLabels[key] || { label: key, hint: "" };
+      const visual = moduleVisuals[key] || { code: "KF", color: "blue" };
       return `
-      <article class="knowledge-module visual-card" data-module="${title}">
+      <article class="knowledge-module visual-card" data-module="${key}">
         <button class="module-button" type="button" data-module-index="${index}">
           <span class="module-icon ${visual.color}">${visual.code}</span>
           <span class="module-title">${meta.label}</span>
@@ -596,7 +767,7 @@ function renderInterface(task, artwork) {
         <div class="module-body">
           <p class="knowledge-hint">${meta.hint}</p>
           <div class="priority ${priority}">${priorityLabels[priority] || priority} decision relevance / 决策相关性</div>
-          <p>${bilingual(text)}</p>
+          ${html}
         </div>
       </article>
     `;
@@ -629,17 +800,30 @@ function renderTask() {
   state.taskStart = Date.now();
   state.moduleStats = {};
   state.activeModuleStart = {};
+  logEvent("artwork_page_start", { artworkId: task.artworkId, interface: task.interface });
 
   $("#taskCount").textContent = `Task ${state.taskIndex + 1} of ${state.taskOrder.length} / 第 ${state.taskIndex + 1} 个任务，共 ${state.taskOrder.length} 个`;
   $("#artworkTitle").textContent = `${artwork.artist}: ${artwork.title}`;
   $("#interfaceBadge").textContent =
     task.interface === "ai_filtered" ? "AI knowledge filtering interface / AI 知识过滤界面" : "Unfiltered information interface / 未过滤信息界面";
+  const completed = state.responses.reduce(
+    (counts, response) => {
+      counts[response.interface] += 1;
+      return counts;
+    },
+    { unfiltered: 0, ai_filtered: 0 }
+  );
+  const currentIsAi = task.interface === "ai_filtered";
+  const shownUnfiltered = completed.unfiltered + (currentIsAi ? 0 : 1);
+  const shownAi = completed.ai_filtered + (currentIsAi ? 1 : 0);
+  $("#conditionBalance").textContent =
+    `Total: 4 cases = 2 regular dossier + 2 AI report. Current progress: regular dossier ${shownUnfiltered}/2, AI report ${shownAi}/2. / 总共 4 个案例 = 2 个普通资料页 + 2 个 AI 整理报告页。当前进度：普通资料页 ${shownUnfiltered}/2，AI 整理报告页 ${shownAi}/2。`;
   $("#artworkImage").src = artwork.image;
   $("#artworkImage").alt = `${artwork.title} by ${artwork.artist}`;
   $("#artworkMeta").innerHTML = `${artwork.meta}<br /><span class="zh-text">${artwork.metaZh}</span>`;
   $("#interfaceContent").innerHTML = renderInterface(task, artwork);
 
-  const scaleSet = task.interface === "ai_filtered" ? [...scales, trustScale] : [...scales];
+  const scaleSet = task.interface === "ai_filtered" ? [...scales, ...aiTrustScales] : [...scales];
   $("#scaleItems").innerHTML = `<div class="scale-list">${scaleSet.map(renderScale).join("")}</div>`;
   $("#taskForm").reset();
   updateTimer();
@@ -652,6 +836,7 @@ function renderTask() {
       const now = Date.now();
       state.moduleStats[name] ||= { clicks: 0, timeMs: 0 };
       state.moduleStats[name].clicks += 1;
+      logEvent(open ? "module_expand" : "module_collapse", { moduleName: name });
       if (open) {
         state.activeModuleStart[name] = now;
       } else if (state.activeModuleStart[name]) {
@@ -696,8 +881,17 @@ function submitTask() {
   response.interface = task.interface;
   response.taskNumber = state.taskIndex + 1;
   response.taskTimeMs = Date.now() - state.taskStart;
+  response.questionnaireSubmitTimeMs = response.taskTimeMs;
   response.moduleStats = JSON.stringify(state.moduleStats);
+  response.openedRiskModule = Boolean(state.moduleStats.risk);
+  response.openedSourceModule = Boolean(state.moduleStats.source);
+  response.openedExpertModule = Boolean(state.moduleStats.expert);
   state.responses.push(response);
+  logEvent("post_task_submit", {
+    artworkId: task.artworkId,
+    interface: task.interface,
+    taskTimeMs: response.taskTimeMs
+  });
 
   state.taskIndex += 1;
   if (state.taskIndex >= state.taskOrder.length) {
@@ -715,6 +909,8 @@ function finishStudy() {
     alert("Please select at least one knowledge type in each checkbox question. / 请在两个知识类型选择题中各至少选择一项。");
     return;
   }
+  state.completionStatus = "complete";
+  logEvent("experiment_complete", { completionStatus: state.completionStatus });
   const payload = buildPayload();
   localStorage.setItem(`kf_experiment_${state.participantId}`, JSON.stringify(payload));
   $("#summaryBox").textContent = JSON.stringify(payload, null, 2);
@@ -734,7 +930,7 @@ async function saveToDatabase(payload) {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const result = await response.json();
     if (status) {
-      status.textContent = `Database status / 数据库状态：saved to local database, record #${result.id}. / 已保存到本地数据库，记录编号 #${result.id}。`;
+      status.textContent = `Database status / 数据库状态：saved as a new database record #${result.id}. No previous response was overwritten. / 已作为新的数据库记录 #${result.id} 保存；不会覆盖任何已有回答。`;
     }
   } catch (error) {
     if (status) {
@@ -746,12 +942,17 @@ async function saveToDatabase(payload) {
 function buildPayload() {
   return {
     participantId: state.participantId,
+    submissionUuid: state.submissionUuid,
     assignment: state.assignment,
     experienceGroup: state.experienceGroup,
     background: state.background,
     taskOrder: state.taskOrder,
+    conditionOrderGroup: state.assignment,
+    instructionTimeMs: state.instructionTimeMs,
+    events: state.events,
     responses: state.responses,
     reflection: state.reflection,
+    completionStatus: state.completionStatus,
     completedAt: new Date().toISOString()
   };
 }
@@ -762,15 +963,22 @@ function flattenRow(row) {
   return {
     participantId: row.participantId,
     assignment: row.assignment,
+    conditionOrderGroup: state.assignment,
     experienceGroup: row.experienceGroup,
-    artExperience: background.artExperience,
+    artMarketTransactionExperience: background.artMarketTransactionExperience,
     yearsExperience: background.yearsExperience,
+    pricingFamiliarity: background.pricingFamiliarity,
+    artExpertise: background.artExpertise,
     investmentExperience: background.investmentExperience,
     aiFamiliarity: background.aiFamiliarity,
+    aiUseFrequency: background.aiUseFrequency,
     riskPreference: background.riskPreference,
     artInterest: background.artInterest,
+    categoryInterest: background.categoryInterest,
     ageGroup: background.ageGroup,
     education: background.education,
+    instructionTimeMs: state.instructionTimeMs,
+    completionStatus: state.completionStatus,
     taskNumber: row.taskNumber,
     artworkId: row.artworkId,
     artworkTitle: row.artworkTitle,
@@ -778,26 +986,21 @@ function flattenRow(row) {
     interface: row.interface,
     valuation: row.valuation,
     wtp: row.wtp,
-    risk: row.risk,
-    intention: row.intention,
-    confidence: row.confidence,
-    knowledgeQuality: row.knowledgeQuality,
-    informationOverload: row.informationOverload,
-    trustAI: row.trustAI || "",
     taskTimeMs: row.taskTimeMs,
+    questionnaireSubmitTimeMs: row.questionnaireSubmitTimeMs,
+    openedRiskModule: row.openedRiskModule,
+    openedSourceModule: row.openedSourceModule,
+    openedExpertModule: row.openedExpertModule,
     moduleStats: row.moduleStats,
+    ...row,
     preferredInterface: reflection.preferredInterface,
+    trustedInterface: reflection.trustedInterface,
     aiSuitableTypes: reflection.aiSuitableTypes,
     aiSuitableNote: reflection.aiSuitableNote,
     humanExpertiseTypes: reflection.humanExpertiseTypes,
     humanExpertiseNote: reflection.humanExpertiseNote,
     realUse: reflection.realUse,
-    aiMarket: reflection.aiMarket,
-    aiArtist: reflection.aiArtist,
-    aiObject: reflection.aiObject,
-    aiRisk: reflection.aiRisk,
-    aiExpert: reflection.aiExpert,
-    aiAesthetic: reflection.aiAesthetic
+    ...reflection
   };
 }
 
@@ -856,6 +1059,7 @@ $("#consentCheck").addEventListener("change", (event) => {
 
 $("#startBtn").addEventListener("click", () => {
   state.participantId = createParticipantId();
+  state.submissionUuid = createSubmissionUuid();
   state.assignment = assignmentFromId(state.participantId);
   buildTaskOrder();
   $("#participantId").textContent = state.participantId;
@@ -869,10 +1073,12 @@ $("#backgroundNext").addEventListener("click", () => {
   state.background = formToObject(form);
   state.experienceGroup = classifyExperience(state.background);
   $("#assignmentLabel").textContent = `Assignment ${state.assignment}; ${state.experienceGroup.replace("_", "-")} group. / 组别 ${state.assignment}；${state.experienceGroup.replace("_", "-")} 经验组。`;
+  state.instructionStart = Date.now();
   showScreen("instructions");
 });
 
 $("#beginTasks").addEventListener("click", () => {
+  if (state.instructionStart) state.instructionTimeMs = Date.now() - state.instructionStart;
   state.taskIndex = 0;
   showScreen("tasks");
   renderTask();
